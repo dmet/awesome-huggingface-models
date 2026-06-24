@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — RealEyesVR</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">RealEyes<span>VR</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="demos.html">Live Demos</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="btn-nav active">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p>Questions, project inquiries, or just want to see the demo — reach out anytime.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-inner">
+
+      <div class="contact-form-wrap">
+        <h2>Send a Message</h2>
+        <!-- Netlify Forms — zero config, free tier handles hundreds of submissions/month -->
+        <form name="contact" method="POST" data-netlify="true" class="contact-form">
+          <input type="hidden" name="form-name" value="contact" />
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name" />
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@company.com" />
+          </div>
+          <div class="form-row">
+            <label for="company">Company (optional)</label>
+            <input type="text" id="company" name="company" placeholder="Your company" />
+          </div>
+          <div class="form-row">
+            <label for="interest">I'm interested in...</label>
+            <select id="interest" name="interest">
+              <option value="">Select one</option>
+              <option value="audit">AI Project Audit</option>
+              <option value="billing">Monthly Billing Review</option>
+              <option value="custom">Custom AI Integration</option>
+              <option value="training">Team Training Workshop</option>
+              <option value="demo">Getting a Demo</option>
+              <option value="other">Something Else</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or question..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full">Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h2>What Happens Next</h2>
+        <div class="contact-step">
+          <span class="contact-step-num">1</span>
+          <div>
+            <strong>I'll reply within 24 hours</strong>
+            <p>Usually faster. I read every message personally.</p>
+          </div>
+        </div>
+        <div class="contact-step">
+          <span class="contact-step-num">2</span>
+          <div>
+            <strong>Quick discovery call</strong>
+            <p>30 minutes to understand your project and see if AI can help.</p>
+          </div>
+        </div>
+        <div class="contact-step">
+          <span class="contact-step-num">3</span>
+          <div>
+            <strong>Proposal or pilot</strong>
+            <p>For most engagements, we start with a low-risk pilot using your real data.</p>
+          </div>
+        </div>
+        <div class="contact-aside">
+          <p>Prefer to just try the tools first? <a href="demos.html">Go to Live Demos →</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">RealEyes<span>VR</span></a>
+        <p>Construction AI Intelligence</p>
+      </div>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="demos.html">Live Demos</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 RealEyesVR. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>
