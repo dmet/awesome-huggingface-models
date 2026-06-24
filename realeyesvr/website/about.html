@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — RealEyesVR</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">RealEyes<span>VR</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="demos.html">Live Demos</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html" class="btn-nav">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>About RealEyesVR</h1>
+      <p>Built by someone who has spent years in the field — and a year in the AI lab.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-inner">
+
+      <div class="about-text">
+        <h2>The Problem I Kept Running Into</h2>
+        <p>
+          Construction projects fail for predictable reasons: billings that don't match
+          installed work, schedules that slip quietly until they don't, and site conditions
+          that nobody documents until there's a dispute. The data to catch these problems
+          early exists — photos, schedules, pay apps — but nobody has time to connect the dots.
+        </p>
+        <p>
+          Over the last year I've been building and testing AI tools specifically for this gap.
+          Using vision language models like Qwen VLM, I've developed workflows that can look at
+          a jobsite photo and tell you what's been installed, cross-reference it against the
+          schedule, and flag it against the billing — in seconds.
+        </p>
+        <h2>Why "Bring Your Own Data"</h2>
+        <p>
+          Construction data is sensitive. I don't want your project data sitting on a server
+          somewhere. The tools on this site process your uploads in real time and return
+          results immediately — nothing is stored, nothing is trained on your information.
+          Your data stays yours.
+        </p>
+        <h2>What I'm Building Toward</h2>
+        <p>
+          The live demos on this site are the proof of concept. The goal is a lightweight
+          AI co-pilot that any project manager can use — no data science background required,
+          no expensive software subscription, no IT department needed.
+        </p>
+      </div>
+
+      <div class="about-sidebar">
+        <div class="expertise-card">
+          <h3>Areas of Focus</h3>
+          <ul>
+            <li>Vision Language Models (VLM) for construction</li>
+            <li>Schedule vs. reality gap analysis</li>
+            <li>Over &amp; under billing detection</li>
+            <li>Subcontractor pay app validation</li>
+            <li>AI prompt engineering for construction workflows</li>
+            <li>Jobsite photo documentation analysis</li>
+          </ul>
+        </div>
+        <div class="expertise-card">
+          <h3>Tools &amp; Models</h3>
+          <ul>
+            <li>Qwen2-VL (vision analysis)</li>
+            <li>Claude (reasoning &amp; reporting)</li>
+            <li>Streamlit / Gradio (app interfaces)</li>
+            <li>HuggingFace (model hosting)</li>
+            <li>Python / pandas (data processing)</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">RealEyes<span>VR</span></a>
+        <p>Construction AI Intelligence</p>
+      </div>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="demos.html">Live Demos</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 RealEyesVR. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

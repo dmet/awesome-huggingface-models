@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Demos — RealEyesVR</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">RealEyes<span>VR</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="demos.html" class="active">Live Demos</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="btn-nav">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Live Demos</h1>
+      <p>Bring your own data. These tools run on your uploads — nothing is stored.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- DEMO 1: Schedule vs Photo -->
+      <div class="demo-block" id="schedule">
+        <div class="demo-meta">
+          <span class="demo-tag">Vision AI</span>
+          <h2>Schedule vs. Jobsite Photo Analyzer</h2>
+          <p>Upload a jobsite photo and paste your schedule summary. The AI compares what it sees against what should be done and flags variances.</p>
+          <ul class="demo-inputs">
+            <li>📷 One jobsite photo (JPG/PNG)</li>
+            <li>📄 Schedule notes or paste text from your schedule</li>
+          </ul>
+        </div>
+        <div class="demo-embed-wrapper">
+          <!-- Replace YOUR-HF-USERNAME with your HuggingFace username after deploying -->
+          <iframe
+            src="https://YOUR-HF-USERNAME-jobsite-analyzer.hf.space"
+            class="demo-embed"
+            title="Jobsite Photo Analyzer"
+            loading="lazy"
+          ></iframe>
+          <div class="embed-placeholder" id="placeholder-schedule">
+            <div class="placeholder-inner">
+              <div class="placeholder-icon">🏗️</div>
+              <h3>Schedule vs. Photo Analyzer</h3>
+              <p>Demo deploying soon — check back shortly or <a href="contact.html">contact us</a> for early access.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="demo-divider" />
+
+      <!-- DEMO 2: Over/Under Billing -->
+      <div class="demo-block" id="billing">
+        <div class="demo-meta">
+          <span class="demo-tag">Financial AI</span>
+          <h2>Over &amp; Under Billing Detector</h2>
+          <p>Upload your schedule of values with billed amounts and installed percentages. The tool flags over-billed and under-billed line items with risk scores.</p>
+          <ul class="demo-inputs">
+            <li>📊 CSV or Excel with line items, billed %, and installed %</li>
+          </ul>
+          <a href="billing-template.csv" class="template-link" download>⬇ Download CSV template</a>
+        </div>
+        <div class="demo-embed-wrapper">
+          <iframe
+            src="https://YOUR-HF-USERNAME-billing-detector.hf.space"
+            class="demo-embed"
+            title="Billing Detector"
+            loading="lazy"
+          ></iframe>
+          <div class="embed-placeholder" id="placeholder-billing">
+            <div class="placeholder-inner">
+              <div class="placeholder-icon">💰</div>
+              <h3>Over &amp; Under Billing Detector</h3>
+              <p>Demo deploying soon — check back shortly or <a href="contact.html">contact us</a> for early access.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="demo-divider" />
+
+      <!-- DEMO 3: Coming Soon -->
+      <div class="demo-block coming-soon" id="safety">
+        <div class="demo-meta">
+          <span class="demo-tag coming">Coming Soon</span>
+          <h2>Safety &amp; PPE Compliance Scanner</h2>
+          <p>Upload jobsite photos and receive an automated safety audit — hard hat detection, vest compliance, housekeeping, and common OSHA risk factors.</p>
+          <ul class="demo-inputs">
+            <li>📷 One or more jobsite photos</li>
+          </ul>
+        </div>
+        <div class="demo-embed-wrapper">
+          <div class="embed-placeholder">
+            <div class="placeholder-inner">
+              <div class="placeholder-icon">🦺</div>
+              <h3>Safety Scanner</h3>
+              <p>In development. <a href="contact.html">Join the waitlist</a> for early access.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">RealEyes<span>VR</span></a>
+        <p>Construction AI Intelligence</p>
+      </div>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="demos.html">Live Demos</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 RealEyesVR. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>
