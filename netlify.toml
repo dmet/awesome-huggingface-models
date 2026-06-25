@@ -1,6 +1,6 @@
 [build]
   base    = "realeyesvr/website"
-  publish = "realeyesvr/website"
+  publish = "."
 
 [functions]
   directory = "netlify/functions"
