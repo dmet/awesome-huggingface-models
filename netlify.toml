@@ -2,6 +2,9 @@
   base    = "realeyesvr/website"
   publish = "realeyesvr/website"
 
+[functions]
+  directory = "netlify/functions"
+
 [[redirects]]
   from = "/*"
   to   = "/index.html"
