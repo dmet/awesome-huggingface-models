@@ -26,7 +26,7 @@
   <section class="page-hero">
     <div class="container">
       <h1>Live Demos</h1>
-      <p>Bring your own data. These tools run on your uploads — nothing is stored.</p>
+      <p>Bring your own data. These tools run on your uploads &mdash; nothing is stored.</p>
     </div>
   </section>
 
@@ -38,27 +38,66 @@
         <div class="demo-meta">
           <span class="demo-tag">Vision AI</span>
           <h2>Schedule vs. Jobsite Photo Analyzer</h2>
+          <p>I've been working with advanced AI VLMs since late 2025 — including more powerful Qwen models in my professional work. This demo intentionally runs on a more affordable version to show what's achievable without a big software budget or custom infrastructure.</p>
           <p>Upload a jobsite photo and paste your schedule summary. The AI compares what it sees against what should be done and flags variances.</p>
           <ul class="demo-inputs">
-            <li>📷 One jobsite photo (JPG/PNG)</li>
-            <li>📄 Schedule notes or paste text from your schedule</li>
+            <li>&#128247; One jobsite photo (JPG/PNG)</li>
+            <li>&#128196; Schedule notes or paste text from your schedule</li>
           </ul>
         </div>
-        <div class="demo-embed-wrapper">
-          <!-- Replace YOUR-HF-USERNAME with your HuggingFace username after deploying -->
-          <iframe
-            src="https://YOUR-HF-USERNAME-jobsite-analyzer.hf.space"
-            class="demo-embed"
-            title="Jobsite Photo Analyzer"
-            loading="lazy"
-          ></iframe>
-          <div class="embed-placeholder" id="placeholder-schedule">
-            <div class="placeholder-inner">
-              <div class="placeholder-icon">🏗️</div>
-              <h3>Schedule vs. Photo Analyzer</h3>
-              <p>Demo deploying soon — check back shortly or <a href="contact.html">contact us</a> for early access.</p>
+
+        <div class="analyzer-wrap">
+
+          <!-- API Key -->
+          <div class="analyzer-key-row">
+            <label for="api-key">OpenRouter API Key</label>
+            <input type="password" id="api-key" placeholder="sk-or-..." autocomplete="off" />
+            <a href="https://openrouter.ai/keys" target="_blank" rel="noopener">Get a free key &rarr;</a>
+          </div>
+
+          <!-- Inputs -->
+          <div class="analyzer-inputs">
+            <div>
+              <span class="field-label">Jobsite Photo</span>
+              <div class="upload-zone" id="upload-zone">
+                <input type="file" id="photo-input" accept="image/jpeg,image/png" hidden />
+                <div class="upload-prompt" id="upload-prompt">
+                  <div class="upload-icon">&#128247;</div>
+                  <p>Drop a photo here or <span class="upload-link">browse</span></p>
+                  <small>JPG or PNG</small>
+                </div>
+                <img id="photo-preview" alt="Uploaded jobsite photo" hidden />
+              </div>
+            </div>
+            <div class="schedule-col">
+              <span class="field-label">Schedule Notes</span>
+              <textarea
+                id="schedule-notes"
+                placeholder="Week 14 — Grid B3:&#10;- Concrete slab pour: COMPLETE&#10;- Formwork removal: IN PROGRESS&#10;- Steel erection at C1: NOT STARTED&#10;&#10;Week 14 — Site general:&#10;- Perimeter fencing: COMPLETE&#10;- Temporary power: COMPLETE"
+              ></textarea>
+              <input
+                type="text"
+                id="week-phase"
+                placeholder="Current week / phase (optional)"
+              />
             </div>
           </div>
+
+          <!-- Analyze -->
+          <button id="analyze-btn" class="analyzer-btn">Analyze Photo Against Schedule</button>
+
+          <!-- Error -->
+          <div id="error-box" class="error-box" hidden></div>
+
+          <!-- Result -->
+          <div id="result-wrap" class="result-wrap" hidden>
+            <div class="result-header">
+              <span class="demo-tag">&#10003; Analysis Complete</span>
+              <button id="download-btn" class="download-btn">&#8595; Download Report</button>
+            </div>
+            <div id="result-content" class="result-content"></div>
+          </div>
+
         </div>
       </div>
 
@@ -71,22 +110,16 @@
           <h2>Over &amp; Under Billing Detector</h2>
           <p>Upload your schedule of values with billed amounts and installed percentages. The tool flags over-billed and under-billed line items with risk scores.</p>
           <ul class="demo-inputs">
-            <li>📊 CSV or Excel with line items, billed %, and installed %</li>
+            <li>&#128202; CSV or Excel with line items, billed %, and installed %</li>
           </ul>
-          <a href="billing-template.csv" class="template-link" download>⬇ Download CSV template</a>
+          <a href="billing-template.csv" class="template-link" download>&#8595; Download CSV template</a>
         </div>
         <div class="demo-embed-wrapper">
-          <iframe
-            src="https://YOUR-HF-USERNAME-billing-detector.hf.space"
-            class="demo-embed"
-            title="Billing Detector"
-            loading="lazy"
-          ></iframe>
           <div class="embed-placeholder" id="placeholder-billing">
             <div class="placeholder-inner">
-              <div class="placeholder-icon">💰</div>
+              <div class="placeholder-icon">&#128176;</div>
               <h3>Over &amp; Under Billing Detector</h3>
-              <p>Demo deploying soon — check back shortly or <a href="contact.html">contact us</a> for early access.</p>
+              <p>Demo deploying soon &mdash; check back shortly or <a href="contact.html">contact us</a> for early access.</p>
             </div>
           </div>
         </div>
@@ -99,15 +132,15 @@
         <div class="demo-meta">
           <span class="demo-tag coming">Coming Soon</span>
           <h2>Safety &amp; PPE Compliance Scanner</h2>
-          <p>Upload jobsite photos and receive an automated safety audit — hard hat detection, vest compliance, housekeeping, and common OSHA risk factors.</p>
+          <p>Upload jobsite photos and receive an automated safety audit &mdash; hard hat detection, vest compliance, housekeeping, and common OSHA risk factors.</p>
           <ul class="demo-inputs">
-            <li>📷 One or more jobsite photos</li>
+            <li>&#128247; One or more jobsite photos</li>
           </ul>
         </div>
         <div class="demo-embed-wrapper">
           <div class="embed-placeholder">
             <div class="placeholder-inner">
-              <div class="placeholder-icon">🦺</div>
+              <div class="placeholder-icon">&#129734;</div>
               <h3>Safety Scanner</h3>
               <p>In development. <a href="contact.html">Join the waitlist</a> for early access.</p>
             </div>
@@ -137,5 +170,6 @@
   </footer>
 
   <script src="js/nav.js"></script>
+  <script src="js/jobsite-analyzer.js"></script>
 </body>
 </html>
