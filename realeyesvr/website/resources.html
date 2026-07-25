@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A curated, regularly checked collection of working AI and document-extraction experiments for construction technology learners." />
+  <title>Experiment Lab — RealEyesVR</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">RealEyes<span>VR</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">How it works</a></li>
+        <li><a href="demos.html">Research</a></li>
+        <li><a href="resources.html" class="active">Experiment lab</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="btn-nav">Follow the project</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-hero blueprint-grid">
+      <div class="container">
+        <p class="eyebrow">Useful places to experiment</p>
+        <h1>Try the tools yourself</h1>
+        <p>A curated starting point for people exploring visual AI, OCR, and document extraction—without needing a high-end local computer.</p>
+      </div>
+    </section>
+
+    <section class="section resource-intro">
+      <div class="container">
+        <div class="resource-guidance">
+          <div>
+            <p class="section-kicker">Before uploading</p>
+            <h2 class="display-title">Use safe test documents.</h2>
+          </div>
+          <div>
+            <p>These are external services with their own terms, limits, and data practices. Use public drawings, synthetic samples, or documents you are authorized to share.</p>
+            <p><strong>Never upload confidential project drawings, personal information, credentials, or client data just to test a model.</strong></p>
+          </div>
+        </div>
+
+        <div class="resource-toolbar" aria-label="Resource information">
+          <span><i class="status-dot"></i> Links checked automatically each week</span>
+          <span id="resource-count">Loading resources…</span>
+        </div>
+
+        <div id="resource-list" class="resource-list" aria-live="polite">
+          <noscript><p>This catalog needs JavaScript to load. You can still visit the <a href="https://huggingface.co/Qwen/spaces">official Qwen Spaces collection</a>.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-alt">
+      <div class="container contribute-row">
+        <div><p class="section-kicker">RealEyesVR Test Lab</p><h2>Next, we are building our own experiment.</h2><p>Authenticated Hugging Face users will be able to test a focused construction-schedule extraction workflow using shared ZeroGPU compute.</p></div>
+        <a href="demos.html#test-lab" class="btn-primary">See the concept</a>
+      </div>
+    </section>
+    <section class="section"><div class="container contribute-row"><div><p class="section-kicker">Keep this directory useful</p><h2>Know a better experiment?</h2><p>Recommendations should be accessible, relevant to visual or document AI, and clear about account or usage requirements.</p></div><a href="contact.html" class="btn-primary">Suggest a resource</a></div></section>
+  </main>
+
+  <footer class="footer"><div class="container footer-inner"><div class="footer-brand"><a href="index.html" class="logo">RealEyes<span>VR</span></a><p>Construction drawings, made usable.</p></div><div class="footer-links"><a href="services.html">How it works</a><a href="demos.html">Research</a><a href="resources.html">Experiment lab</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><p>&copy; 2026 RealEyesVR. Independent research project.</p></div></footer>
+  <script src="js/nav.js"></script>
+  <script src="js/resources.js"></script>
+</body>
+</html>

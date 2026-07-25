@@ -3,166 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Live Demos — RealEyesVR</title>
+  <meta name="description" content="Current RealEyesVR research into construction drawing extraction and data twins." />
+  <title>Research — RealEyesVR</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="logo">RealEyes<span>VR</span></a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="demos.html" class="active">Live Demos</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="btn-nav">Contact</a></li>
-      </ul>
-      <button class="hamburger" aria-label="Menu">&#9776;</button>
-    </div>
-  </nav>
-
-  <section class="page-hero">
-    <div class="container">
-      <h1>Live Demos</h1>
-      <p>Bring your own data. These tools run on your uploads &mdash; nothing is stored.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-
-      <!-- DEMO 1: Schedule vs Photo -->
-      <div class="demo-block" id="schedule">
-        <div class="demo-meta">
-          <span class="demo-tag">Vision AI</span>
-          <h2>Schedule vs. Jobsite Photo Analyzer</h2>
-          <p>I've been working with advanced AI VLMs since late 2025 — including more powerful Qwen models in my professional work. This demo intentionally runs on a more affordable version to show what's achievable without a big software budget or custom infrastructure.</p>
-          <p>Upload a jobsite photo and paste your schedule summary. The AI compares what it sees against what should be done and flags variances.</p>
-          <ul class="demo-inputs">
-            <li>&#128247; One jobsite photo (JPG/PNG)</li>
-            <li>&#128196; Schedule notes or paste text from your schedule</li>
-          </ul>
+  <nav class="nav"><div class="nav-inner"><a href="index.html" class="logo">RealEyes<span>VR</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html">How it works</a></li><li><a href="demos.html" class="active">Research</a></li><li><a href="resources.html">Experiment lab</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="btn-nav">Follow the project</a></li></ul><button class="hamburger" aria-label="Open navigation" aria-expanded="false">Menu</button></div></nav>
+  <main>
+    <section class="page-hero blueprint-grid"><div class="container"><p class="eyebrow">Open workbench</p><h1>What is being tested</h1><p>This page separates measured progress from ideas still under investigation.</p></div></section>
+    <section class="section"><div class="container research-layout">
+      <aside class="research-summary"><span class="status-pill">Current direction</span><h2>Qwen first, validation after</h2><p>Recent tests changed the pipeline. Qwen 3.5 now makes sense as the first visual gate, followed by deterministic processing and a targeted Claude review step.</p><a class="source-link" href="https://qwen.ai/blog?id=qwen3.5" target="_blank" rel="noopener noreferrer">Read the official Qwen 3.5 overview <span aria-hidden="true">↗</span></a></aside>
+      <div class="research-notes">
+        <article><p class="note-meta">Validated direction</p><h3>Direct visual analysis is the initial gate</h3><p>The earlier approach began with local signal processing to find table regions. Recent results indicate that Qwen can understand the full sheet well enough to lead the process. Traditional detection remains useful as a fallback and independent check.</p></article>
+        <article><p class="note-meta">Current benchmark target</p><h3>Door and frame schedules</h3><p>Testing began with sheet A8.2 and focuses on door rows, dimensions, materials, hardware groups, frame types, ratings, and remarks. Merged cells and hardware-group blocks remain important stress cases.</p></article>
+        <article><p class="note-meta">Evaluation principle</p><h3>“Almost 100%” needs a precise definition</h3><p>Table detection, row count, field extraction, normalized values, and final reviewed records are separate measures. The next benchmark should report each one so improvements remain meaningful.</p></article>
+        <article><p class="note-meta">Long-term asset</p><h3>The schema and verified dataset matter most</h3><p>Models will change. A collection of hand-verified construction schedules, paired with clear schemas and source evidence, makes future models easier to compare and replace.</p></article>
+      </div>
+    </div></section>
+    <section class="section bg-alt"><div class="container">
+      <div class="section-heading-row"><div><p class="section-kicker">Roadmap</p><h2 class="display-title">The next useful milestones</h2></div><p>Small, measurable steps before broad automation.</p></div>
+      <div class="roadmap">
+        <article class="done"><span>Now</span><h3>Repeatable single-sheet extraction</h3><p>Document the exact model, prompt, settings, output, review, and score.</p></article>
+        <article><span>Next</span><h3>Source-linked validation</h3><p>Connect every extracted field to its sheet region and review state.</p></article>
+        <article><span>Then</span><h3>Drawing-set routing</h3><p>Use the drawing index to route likely schedule sheets to the right schema.</p></article>
+        <article><span>Later</span><h3>Cross-source reconciliation</h3><p>Compare schedules, specifications, BIM records, and drawing revisions.</p></article>
+      </div>
+    </div></section>
+    <section class="section test-lab-section" id="test-lab">
+      <div class="container">
+        <div class="test-lab-heading">
+          <div><p class="section-kicker">Planned working example</p><h2 class="display-title">The RealEyesVR Test Lab</h2></div>
+          <span class="build-badge">In development</span>
         </div>
-
-        <div class="analyzer-wrap">
-
-          <!-- Inputs -->
-          <div class="analyzer-inputs">
-            <div>
-              <span class="field-label">Jobsite Photo</span>
-              <div class="upload-zone" id="upload-zone">
-                <input type="file" id="photo-input" accept="image/jpeg,image/png" hidden />
-                <div class="upload-prompt" id="upload-prompt">
-                  <div class="upload-icon">&#128247;</div>
-                  <p>Drop a photo here or <span class="upload-link">browse</span></p>
-                  <small>JPG or PNG</small>
-                </div>
-                <img id="photo-preview" alt="Uploaded jobsite photo" hidden />
-              </div>
-            </div>
-            <div class="schedule-col">
-              <span class="field-label">Schedule Notes</span>
-              <textarea
-                id="schedule-notes"
-                placeholder="Week 14 — Grid B3:&#10;- Concrete slab pour: COMPLETE&#10;- Formwork removal: IN PROGRESS&#10;- Steel erection at C1: NOT STARTED&#10;&#10;Week 14 — Site general:&#10;- Perimeter fencing: COMPLETE&#10;- Temporary power: COMPLETE"
-              ></textarea>
-              <input
-                type="text"
-                id="week-phase"
-                placeholder="Current week / phase (optional)"
-              />
-            </div>
-          </div>
-
-          <!-- Analyze -->
-          <button id="analyze-btn" class="analyzer-btn">Analyze Photo Against Schedule</button>
-
-          <!-- Error -->
-          <div id="error-box" class="error-box" hidden></div>
-
-          <!-- Result -->
-          <div id="result-wrap" class="result-wrap" hidden>
-            <div class="result-header">
-              <span class="demo-tag">&#10003; Analysis Complete</span>
-              <button id="download-btn" class="download-btn">&#8595; Download Report</button>
-            </div>
-            <div id="result-content" class="result-content"></div>
-          </div>
-
+        <p class="test-lab-lead">The Test Lab will let authenticated Hugging Face users try one focused version of the pipeline themselves. Shared ZeroGPU infrastructure supplies the temporary GPU; the user only needs a browser and a safe test image.</p>
+        <div class="lab-flow" aria-label="Planned Test Lab workflow">
+          <article><span>01</span><h3>Sign in</h3><p>Use a Hugging Face account so RealEyesVR does not store passwords.</p></article>
+          <article><span>02</span><h3>Upload safely</h3><p>Submit one public, synthetic, or otherwise authorized schedule image.</p></article>
+          <article><span>03</span><h3>Run Qwen</h3><p>ZeroGPU temporarily allocates shared GPU capacity for extraction.</p></article>
+          <article><span>04</span><h3>Check the result</h3><p>Review structured rows, validation warnings, source evidence, and raw JSON.</p></article>
+        </div>
+        <div class="lab-boundaries">
+          <div><p class="note-meta">First test case</p><h3>Door and frame schedules</h3><p>One image, one known schema, and one measurable result. Broader drawing types come only after this workflow proves repeatable.</p></div>
+          <div><p class="note-meta">What it will measure</p><h3>Real-world behavior</h3><p>Processing time, row count, field accuracy, validation warnings, corrections, and whether the result was useful without expert guidance.</p></div>
+          <div><p class="note-meta">Privacy boundary</p><h3>No confidential drawings</h3><p>The Test Lab will use cloud processing. Visitors must not upload client, employer, personal, or otherwise restricted information.</p></div>
         </div>
       </div>
-
-      <hr class="demo-divider" />
-
-      <!-- DEMO 2: Over/Under Billing -->
-      <div class="demo-block" id="billing">
-        <div class="demo-meta">
-          <span class="demo-tag">Financial AI</span>
-          <h2>Over &amp; Under Billing Detector</h2>
-          <p>Upload your schedule of values with billed amounts and installed percentages. The tool flags over-billed and under-billed line items with risk scores.</p>
-          <ul class="demo-inputs">
-            <li>&#128202; CSV or Excel with line items, billed %, and installed %</li>
-          </ul>
-          <a href="billing-template.csv" class="template-link" download>&#8595; Download CSV template</a>
-        </div>
-        <div class="demo-embed-wrapper">
-          <div class="embed-placeholder" id="placeholder-billing">
-            <div class="placeholder-inner">
-              <div class="placeholder-icon">&#128176;</div>
-              <h3>Over &amp; Under Billing Detector</h3>
-              <p>Demo deploying soon &mdash; check back shortly or <a href="contact.html">contact us</a> for early access.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr class="demo-divider" />
-
-      <!-- DEMO 3: Coming Soon -->
-      <div class="demo-block coming-soon" id="safety">
-        <div class="demo-meta">
-          <span class="demo-tag coming">Coming Soon</span>
-          <h2>Safety &amp; PPE Compliance Scanner</h2>
-          <p>Upload jobsite photos and receive an automated safety audit &mdash; hard hat detection, vest compliance, housekeeping, and common OSHA risk factors.</p>
-          <ul class="demo-inputs">
-            <li>&#128247; One or more jobsite photos</li>
-          </ul>
-        </div>
-        <div class="demo-embed-wrapper">
-          <div class="embed-placeholder">
-            <div class="placeholder-inner">
-              <div class="placeholder-icon">&#129734;</div>
-              <h3>Safety Scanner</h3>
-              <p>In development. <a href="contact.html">Join the waitlist</a> for early access.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="index.html" class="logo">RealEyes<span>VR</span></a>
-        <p>Construction AI Intelligence</p>
-      </div>
-      <div class="footer-links">
-        <a href="services.html">Services</a>
-        <a href="demos.html">Live Demos</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 RealEyesVR. All rights reserved.</p>
-    </div>
-  </footer>
-
+    </section>
+    <section class="section bg-alt"><div class="container callout"><div><p class="section-kicker">Follow the prototype</p><h2>Built in public, tested carefully.</h2><p>The first release will favor a small, understandable experiment over a broad claim of construction-document automation.</p></div><a href="contact.html" class="btn-primary">Follow the build</a></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><div class="footer-brand"><a href="index.html" class="logo">RealEyes<span>VR</span></a><p>Construction drawings, made usable.</p></div><div class="footer-links"><a href="services.html">How it works</a><a href="demos.html">Research</a><a href="resources.html">Experiment lab</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><p>&copy; 2026 RealEyesVR. Independent research project.</p></div></footer>
   <script src="js/nav.js"></script>
-  <script src="js/jobsite-analyzer.js"></script>
 </body>
 </html>

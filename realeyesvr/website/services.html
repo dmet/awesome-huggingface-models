@@ -3,108 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services — RealEyesVR</title>
+  <meta name="description" content="How RealEyesVR turns construction drawing schedules into checked, source-linked records." />
+  <title>How it works — RealEyesVR</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="logo">RealEyes<span>VR</span></a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="demos.html">Live Demos</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="btn-nav">Contact</a></li>
-      </ul>
-      <button class="hamburger" aria-label="Menu">&#9776;</button>
-    </div>
-  </nav>
-
-  <section class="page-hero">
-    <div class="container">
-      <h1>Services</h1>
-      <p>From one-time audits to fully integrated AI workflows for your construction business.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="services-grid">
-
-        <div class="service-card featured">
-          <div class="service-badge">Most Popular</div>
-          <div class="service-icon">🔍</div>
-          <h3>AI Audit — Project Snapshot</h3>
-          <p>Send us your jobsite photos, schedule, and billing data. We return a structured report identifying schedule variances, billing risks, and site conditions.</p>
-          <ul>
-            <li>Delivered within 48 hours</li>
-            <li>Executive summary + line-item findings</li>
-            <li>Actionable recommendations</li>
-          </ul>
-          <a href="contact.html" class="btn-primary">Request an Audit</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🔄</div>
-          <h3>Monthly Billing Review</h3>
-          <p>Recurring AI-assisted review of subcontractor pay applications each billing cycle — math validation, lien waiver tracking, and over-billing flags.</p>
-          <ul>
-            <li>Monthly cadence</li>
-            <li>Pay app validation checklist</li>
-            <li>Risk summary report</li>
-          </ul>
-          <a href="contact.html" class="btn-secondary">Learn More</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">⚙️</div>
-          <h3>Custom AI Integration</h3>
-          <p>We build a tailored AI workflow integrated into your existing project management tools — Procore, Autodesk, or custom platforms.</p>
-          <ul>
-            <li>Discovery + scoping call</li>
-            <li>Custom prompt engineering</li>
-            <li>API integration & deployment</li>
-          </ul>
-          <a href="contact.html" class="btn-secondary">Start a Conversation</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🎓</div>
-          <h3>Team Training</h3>
-          <p>Hands-on workshop for your project management team covering AI tools for construction — what works, what doesn't, and how to prompt effectively.</p>
-          <ul>
-            <li>Half-day or full-day format</li>
-            <li>Real examples from construction</li>
-            <li>Take-home prompt library</li>
-          </ul>
-          <a href="contact.html" class="btn-secondary">Book a Workshop</a>
-        </div>
-
+  <nav class="nav"><div class="nav-inner"><a href="index.html" class="logo">RealEyes<span>VR</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html" class="active">How it works</a></li><li><a href="demos.html">Research</a></li><li><a href="resources.html">Experiment lab</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="btn-nav">Follow the project</a></li></ul><button class="hamburger" aria-label="Open navigation" aria-expanded="false">Menu</button></div></nav>
+  <main>
+    <section class="page-hero blueprint-grid"><div class="container"><p class="eyebrow">A plain-language guide</p><h1>How a drawing becomes data</h1><p>The process combines visual AI, ordinary software checks, and focused review. Each part has a specific job.</p></div></section>
+    <section class="section"><div class="container narrow">
+      <div class="process-detail">
+        <article><span class="process-num">01</span><div><p class="section-kicker">Drawing intake</p><h2>Start with the documents teams already use</h2><p>The pipeline accepts drawing PDFs and records the project, package, sheet number, title, revision, and page location. That source record follows the data throughout the process.</p><div class="plain-note"><strong>Why it matters</strong><p>A value without its source cannot be trusted or audited later.</p></div></div></article>
+        <article><span class="process-num">02</span><div><p class="section-kicker">Visual gate</p><h2>Let Qwen find and read the useful information</h2><p>Qwen 3.5 looks at the sheet, distinguishes schedules from diagrams and notes, identifies the table type, and returns candidate records in a defined format.</p><div class="plain-note"><strong>Why it matters</strong><p>Recent testing suggests direct visual understanding is a stronger first gate than relying only on handcrafted line and whitespace detection.</p></div></div></article>
+        <article><span class="process-num">03</span><div><p class="section-kicker">Deterministic checks</p><h2>Use code for facts that should not require judgment</h2><p>Software checks data types, required fields, units, allowed values, duplicate rows, cross-references, and impossible combinations. For example, a door number remains text because “101A” is valid.</p><div class="plain-note"><strong>Why it matters</strong><p>AI should not spend time solving checks that ordinary rules can perform consistently.</p></div></div></article>
+        <article><span class="process-num">04</span><div><p class="section-kicker">Focused review</p><h2>Escalate uncertainty instead of hiding it</h2><p>Records that fail a check—or contain unclear cells—can receive a second model review. A person only needs to inspect the smaller set that remains unresolved.</p><div class="plain-note"><strong>Why it matters</strong><p>The goal is not blind automation. It is faster review with visible evidence.</p></div></div></article>
+        <article><span class="process-num">05</span><div><p class="section-kicker">Data twin</p><h2>Store verified records as a connected project layer</h2><p>Doors, hardware, finishes, equipment, and electrical schedules become queryable records. Every record retains its relationship to the source drawing and can later connect to BIM elements without overloading the model.</p><div class="plain-note"><strong>Why it matters</strong><p>The extraction is only useful when people can apply the result to estimating, procurement, coordination, and field work.</p></div></div></article>
       </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="index.html" class="logo">RealEyes<span>VR</span></a>
-        <p>Construction AI Intelligence</p>
-      </div>
-      <div class="footer-links">
-        <a href="services.html">Services</a>
-        <a href="demos.html">Live Demos</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 RealEyesVR. All rights reserved.</p>
-    </div>
-  </footer>
-
+    </div></section>
+    <section class="section bg-alt"><div class="container"><p class="section-kicker">Design rules</p><h2 class="display-title">What keeps the system honest</h2><div class="principle-grid"><article><h3>Evidence first</h3><p>Every value keeps its source sheet and location.</p></article><article><h3>No guessing</h3><p>Blank or illegible fields stay blank and enter review.</p></article><article><h3>Measure each stage</h3><p>Detection, rows, fields, normalization, and review are scored separately.</p></article><article><h3>Model independent</h3><p>The schema and checks survive when the underlying AI model changes.</p></article></div></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><div class="footer-brand"><a href="index.html" class="logo">RealEyes<span>VR</span></a><p>Construction drawings, made usable.</p></div><div class="footer-links"><a href="services.html">How it works</a><a href="demos.html">Research</a><a href="resources.html">Experiment lab</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><p>&copy; 2026 RealEyesVR. Independent research project.</p></div></footer>
   <script src="js/nav.js"></script>
 </body>
 </html>

@@ -3,165 +3,154 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RealEyesVR — Construction AI Intelligence</title>
+  <meta name="description" content="RealEyesVR is an independent construction technology project turning information trapped in drawings into structured, traceable data." />
+  <title>RealEyesVR — Construction drawings, made usable</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="logo">RealEyes<span>VR</span></a>
+      <a href="index.html" class="logo" aria-label="RealEyesVR home">RealEyes<span>VR</span></a>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="demos.html">Live Demos</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="services.html">How it works</a></li>
+        <li><a href="demos.html">Research</a></li>
+        <li><a href="resources.html">Experiment lab</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="btn-nav">Contact</a></li>
+        <li><a href="contact.html" class="btn-nav">Follow the project</a></li>
       </ul>
-      <button class="hamburger" aria-label="Menu">&#9776;</button>
+      <button class="hamburger" aria-label="Open navigation" aria-expanded="false">Menu</button>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-badge">Construction AI Intelligence</div>
-      <h1>See What Your<br/><span>Jobsite Is Telling You</span></h1>
-      <p class="hero-sub">
-        We turn jobsite photos, project schedules, and financial data into
-        actionable intelligence — catching over-billings, schedule slippage,
-        and safety risks before they become problems.
-      </p>
-      <div class="hero-cta">
-        <a href="demos.html" class="btn-primary">Try a Live Demo</a>
-        <a href="services.html" class="btn-secondary">Our Services</a>
+  <main>
+    <section class="hero blueprint-grid">
+      <div class="hero-inner">
+        <p class="eyebrow">Construction data twin research</p>
+        <h1>Construction drawings are full of data. <span>Let’s make it usable.</span></h1>
+        <p class="hero-sub">RealEyesVR is an independent project exploring how visual AI can read drawing schedules, check what it found, and turn the results into structured data people can actually query.</p>
+        <div class="hero-cta">
+          <a href="services.html" class="btn-primary">See how it works</a>
+          <a href="demos.html" class="btn-secondary">View the research</a>
+        </div>
+        <p class="hero-note">Built from a VDC/BIM perspective. Tested on real construction workflows.</p>
       </div>
-    </div>
-    <div class="hero-visual">
-      <div class="stat-card">
-        <span class="stat-num">94%</span>
-        <span class="stat-label">Billing accuracy improvement</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-num">3×</span>
-        <span class="stat-label">Faster schedule reviews</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-num">Real-time</span>
-        <span class="stat-label">Jobsite photo analysis</span>
-      </div>
-    </div>
-  </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="section how">
-    <div class="container">
-      <h2 class="section-title">How It Works</h2>
-      <p class="section-sub">Bring your own data. Get instant intelligence.</p>
-      <div class="steps">
-        <div class="step">
-          <div class="step-icon">📷</div>
-          <h3>Upload Your Data</h3>
-          <p>Jobsite photos, schedule documents, or billing spreadsheets — your data stays yours.</p>
+      <div class="sheet-demo" aria-label="Illustration showing a drawing schedule becoming structured data">
+        <div class="sheet-top">
+          <span>A8.2</span>
+          <span>DOOR &amp; FRAME SCHEDULE</span>
         </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-icon">🧠</div>
-          <h3>AI Analyzes</h3>
-          <p>Vision AI and language models trained on construction workflows review your inputs in seconds.</p>
+        <div class="sheet-table">
+          <div class="sheet-row sheet-head"><span>DOOR</span><span>SIZE</span><span>MAT.</span><span>HW</span></div>
+          <div class="sheet-row selected"><span>101A</span><span>3'-0" × 7'-0"</span><span>HM</span><span>HW-1</span></div>
+          <div class="sheet-row"><span>102</span><span>3'-0" × 7'-0"</span><span>WD</span><span>HW-3</span></div>
+          <div class="sheet-row"><span>103</span><span>6'-0" × 7'-0"</span><span>HM</span><span>HW-5</span></div>
         </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-icon">📊</div>
-          <h3>Get Actionable Insights</h3>
-          <p>Clear reports highlighting risks, discrepancies, and opportunities — no data science degree required.</p>
+        <div class="data-card">
+          <div><span class="key">door_number</span><span class="value">"101A"</span></div>
+          <div><span class="key">width_inches</span><span class="value">36</span></div>
+          <div><span class="key">material</span><span class="value">"HM"</span></div>
+          <div><span class="key">source</span><span class="value">"A8.2"</span></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- USE CASES -->
-  <section class="section use-cases bg-alt">
-    <div class="container">
-      <h2 class="section-title">What We Solve</h2>
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-icon">🏗️</div>
-          <h3>Schedule vs. Reality</h3>
-          <p>Compare jobsite photos against your project schedule to instantly see what's ahead, on track, or falling behind.</p>
-          <a href="demos.html#schedule" class="card-link">Try the demo →</a>
-        </div>
-        <div class="card">
-          <div class="card-icon">💰</div>
-          <h3>Over & Under Billings</h3>
-          <p>Upload your schedule of values and billing data. We flag overbilled line items and cash flow risks automatically.</p>
-          <a href="demos.html#billing" class="card-link">Try the demo →</a>
-        </div>
-        <div class="card">
-          <div class="card-icon">🦺</div>
-          <h3>Safety & Compliance</h3>
-          <p>Vision AI scans jobsite photos for PPE compliance, housekeeping issues, and common OSHA risk factors.</p>
-          <a href="demos.html#safety" class="card-link">Coming soon →</a>
-        </div>
-        <div class="card">
-          <div class="card-icon">📋</div>
-          <h3>Pay App Review</h3>
-          <p>Automated validation of subcontractor pay applications — math checks, lien waiver flags, and schedule alignment.</p>
-          <a href="demos.html#payapp" class="card-link">Coming soon →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DEMO TEASER -->
-  <section class="section demo-teaser">
-    <div class="container demo-teaser-inner">
-      <div class="demo-teaser-text">
-        <h2>See It Working on Your Own Data</h2>
-        <p>No canned demos. No fake data. Upload a real jobsite photo and your schedule, and watch the AI go to work in under 30 seconds.</p>
-        <a href="demos.html" class="btn-primary">Open Live Demo</a>
-      </div>
-      <div class="demo-teaser-visual">
-        <div class="terminal">
-          <div class="terminal-bar"><span></span><span></span><span></span></div>
-          <div class="terminal-body">
-            <p><span class="t-green">✓</span> Photo uploaded: <span class="t-dim">site_west_wing.jpg</span></p>
-            <p><span class="t-green">✓</span> Schedule loaded: <span class="t-dim">Week 14 baseline</span></p>
-            <p><span class="t-yellow">⟳</span> Analyzing work-in-place...</p>
-            <p><span class="t-green">✓</span> Concrete pour at Grid B3 <span class="t-green">CONFIRMED</span></p>
-            <p><span class="t-red">⚠</span> Steel erection at Grid C1 <span class="t-red">NOT STARTED</span></p>
-            <p><span class="t-yellow">⚠</span> Schedule variance: <span class="t-yellow">-4 days</span></p>
+    <section class="section problem-section">
+      <div class="container narrow">
+        <p class="section-kicker">The problem</p>
+        <h2 class="display-title">The information exists. It is simply trapped.</h2>
+        <p class="lead">Door schedules, equipment lists, panelboards, finishes, and hardware groups contain information teams repeatedly re-enter by hand. PDFs are easy to view, but difficult to query, compare, or connect to the rest of a project.</p>
+        <div class="contrast-grid">
+          <div class="contrast-card muted">
+            <span class="card-number">01</span>
+            <h3>Today</h3>
+            <p>People search sheets, read tiny tables, copy values, and rebuild the same lists in spreadsheets and models.</p>
+          </div>
+          <div class="contrast-card">
+            <span class="card-number">02</span>
+            <h3>The idea</h3>
+            <p>Let visual AI perform the first reading, then validate every record and preserve a direct link back to its source.</p>
+          </div>
+          <div class="contrast-card accent">
+            <span class="card-number">03</span>
+            <h3>The result</h3>
+            <p>A living data layer that can support estimating, procurement, coordination, field checks, and future analysis.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
+    <section class="section workflow-section">
+      <div class="container">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">The workflow</p>
+            <h2 class="display-title">From sheet to trusted record</h2>
+          </div>
+          <p>AI starts the process. It does not get the final word.</p>
+        </div>
+        <ol class="pipeline">
+          <li><span>01</span><div><h3>Read</h3><p>Qwen 3.5 examines the drawing and identifies useful schedules and fields.</p></div></li>
+          <li><span>02</span><div><h3>Structure</h3><p>Results are converted into a consistent schema with normalized names and units.</p></div></li>
+          <li><span>03</span><div><h3>Check</h3><p>Rules catch missing values, impossible results, duplicates, and broken references.</p></div></li>
+          <li><span>04</span><div><h3>Review</h3><p>Ambiguous records receive a second AI review or a focused human check.</p></div></li>
+          <li><span>05</span><div><h3>Connect</h3><p>Verified records enter the data twin with their sheet, region, and revision attached.</p></div></li>
+        </ol>
+        <a href="services.html" class="text-link">Explore the full process <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="section outcome-section">
+      <div class="container outcome-grid">
+        <div>
+          <p class="section-kicker light">The destination</p>
+          <h2 class="display-title light">Not another PDF viewer. A project data layer.</h2>
+        </div>
+        <div class="query-list">
+          <p>Once drawing information is structured, teams can ask practical questions:</p>
+          <ul>
+            <li>How many hollow-metal doors use hardware group HW-1?</li>
+            <li>Which scheduled items changed between drawing revisions?</li>
+            <li>Which equipment records are missing electrical requirements?</li>
+            <li>Where do drawing schedules and the BIM model disagree?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section status-section">
+      <div class="container status-grid">
+        <div>
+          <p class="section-kicker">Current status</p>
+          <h2 class="display-title">A working research project—not a finished product.</h2>
+          <p class="lead-small">Recent tests show that Qwen 3.5 can serve as an effective first visual gate, followed by deterministic checks and targeted review. The next work is making that success repeatable across projects, disciplines, and revisions.</p>
+        </div>
+        <div class="status-card">
+          <span class="status-label">Building now</span>
+          <ul>
+            <li>Door and frame schedules</li>
+            <li>Hardware groups</li>
+            <li>Structured JSON output</li>
+            <li>Source-linked validation</li>
+            <li>ZeroGPU community Test Lab</li>
+          </ul>
+          <a href="demos.html#test-lab" class="btn-primary">See the Test Lab concept</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
     <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="index.html" class="logo">RealEyes<span>VR</span></a>
-        <p>Construction AI Intelligence</p>
-      </div>
-      <div class="footer-links">
-        <a href="services.html">Services</a>
-        <a href="demos.html">Live Demos</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-contact">
-        <p>realeyesvr.com</p>
-      </div>
+      <div class="footer-brand"><a href="index.html" class="logo">RealEyes<span>VR</span></a><p>Construction drawings, made usable.</p></div>
+      <div class="footer-links"><a href="services.html">How it works</a><a href="demos.html">Research</a><a href="resources.html">Experiment lab</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 RealEyesVR. All rights reserved.</p>
-    </div>
+    <div class="footer-bottom"><p>&copy; 2026 RealEyesVR. Independent research project.</p></div>
   </footer>
-
   <script src="js/nav.js"></script>
 </body>
 </html>

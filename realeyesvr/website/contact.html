@@ -3,122 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — RealEyesVR</title>
+  <meta name="description" content="Contact RealEyesVR or follow the construction data twin research project." />
+  <title>Follow the project — RealEyesVR</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="logo">RealEyes<span>VR</span></a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="demos.html">Live Demos</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="btn-nav active">Contact</a></li>
-      </ul>
-      <button class="hamburger" aria-label="Menu">&#9776;</button>
-    </div>
-  </nav>
-
-  <section class="page-hero">
-    <div class="container">
-      <h1>Get in Touch</h1>
-      <p>Questions, project inquiries, or just want to see the demo — reach out anytime.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container contact-inner">
-
-      <div class="contact-form-wrap">
-        <h2>Send a Message</h2>
-        <!-- Netlify Forms — zero config, free tier handles hundreds of submissions/month -->
+  <nav class="nav"><div class="nav-inner"><a href="index.html" class="logo">RealEyes<span>VR</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html">How it works</a></li><li><a href="demos.html">Research</a></li><li><a href="resources.html">Experiment lab</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="btn-nav active">Follow the project</a></li></ul><button class="hamburger" aria-label="Open navigation" aria-expanded="false">Menu</button></div></nav>
+  <main>
+    <section class="page-hero blueprint-grid"><div class="container"><p class="eyebrow">Stay connected</p><h1>Follow the build</h1><p>Interested in construction data, VDC, document intelligence, or contributing a safe test case? Send a note.</p></div></section>
+    <section class="section"><div class="container contact-inner">
+      <div class="contact-form-wrap"><p class="section-kicker">Message</p><h2>Start a conversation</h2>
         <form name="contact" method="POST" data-netlify="true" class="contact-form">
           <input type="hidden" name="form-name" value="contact" />
-          <div class="form-row">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required placeholder="Your name" />
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="you@company.com" />
-          </div>
-          <div class="form-row">
-            <label for="company">Company (optional)</label>
-            <input type="text" id="company" name="company" placeholder="Your company" />
-          </div>
-          <div class="form-row">
-            <label for="interest">I'm interested in...</label>
-            <select id="interest" name="interest">
-              <option value="">Select one</option>
-              <option value="audit">AI Project Audit</option>
-              <option value="billing">Monthly Billing Review</option>
-              <option value="custom">Custom AI Integration</option>
-              <option value="training">Team Training Workshop</option>
-              <option value="demo">Getting a Demo</option>
-              <option value="other">Something Else</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or question..."></textarea>
-          </div>
-          <button type="submit" class="btn-primary btn-full">Send Message</button>
+          <div class="form-row"><label for="name">Name</label><input type="text" id="name" name="name" required autocomplete="name" /></div>
+          <div class="form-row"><label for="email">Email</label><input type="email" id="email" name="email" required autocomplete="email" /></div>
+          <div class="form-row"><label for="interest">What brings you here?</label><select id="interest" name="interest"><option value="research">Following the research</option><option value="construction-data">Construction data discussion</option><option value="test-case">Possible test case</option><option value="collaboration">Potential collaboration</option><option value="other">Something else</option></select></div>
+          <div class="form-row"><label for="message">Message</label><textarea id="message" name="message" rows="6" required placeholder="Tell me what you are working on or curious about."></textarea></div>
+          <button type="submit" class="btn-primary btn-full">Send message</button>
         </form>
       </div>
-
-      <div class="contact-info">
-        <h2>What Happens Next</h2>
-        <div class="contact-step">
-          <span class="contact-step-num">1</span>
-          <div>
-            <strong>I'll reply within 24 hours</strong>
-            <p>Usually faster. I read every message personally.</p>
-          </div>
-        </div>
-        <div class="contact-step">
-          <span class="contact-step-num">2</span>
-          <div>
-            <strong>Quick discovery call</strong>
-            <p>30 minutes to understand your project and see if AI can help.</p>
-          </div>
-        </div>
-        <div class="contact-step">
-          <span class="contact-step-num">3</span>
-          <div>
-            <strong>Proposal or pilot</strong>
-            <p>For most engagements, we start with a low-risk pilot using your real data.</p>
-          </div>
-        </div>
-        <div class="contact-aside">
-          <p>Prefer to just try the tools first? <a href="demos.html">Go to Live Demos →</a></p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="index.html" class="logo">RealEyes<span>VR</span></a>
-        <p>Construction AI Intelligence</p>
-      </div>
-      <div class="footer-links">
-        <a href="services.html">Services</a>
-        <a href="demos.html">Live Demos</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 RealEyesVR. All rights reserved.</p>
-    </div>
-  </footer>
-
+      <aside class="contact-info"><p class="section-kicker">Good to know</p><h2>This is an independent project</h2><p>RealEyesVR is currently a personal research effort, not a finished commercial service. Messages about practical construction workflows, evaluation methods, and non-confidential sample data are welcome.</p><div class="contact-aside"><strong>Protect project information</strong><p>Please do not send confidential drawings, client information, credentials, or proprietary project data through this form.</p></div></aside>
+    </div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><div class="footer-brand"><a href="index.html" class="logo">RealEyes<span>VR</span></a><p>Construction drawings, made usable.</p></div><div class="footer-links"><a href="services.html">How it works</a><a href="demos.html">Research</a><a href="resources.html">Experiment lab</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><p>&copy; 2026 RealEyesVR. Independent research project.</p></div></footer>
   <script src="js/nav.js"></script>
 </body>
 </html>

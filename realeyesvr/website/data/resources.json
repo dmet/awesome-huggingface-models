@@ -1,0 +1,68 @@
+{
+  "reviewed": "2026-07-25",
+  "resources": [
+    {
+      "name": "Qwen Chat",
+      "provider": "Qwen",
+      "url": "https://chat.qwen.ai/",
+      "category": "Multimodal model",
+      "description": "The official Qwen chat interface. A straightforward place to test prompts with images and documents when the selected model supports them.",
+      "access": "Free account may be required",
+      "upload_note": "Cloud processing"
+    },
+    {
+      "name": "Qwen3.5 Omni Demo",
+      "provider": "Qwen on Hugging Face",
+      "url": "https://huggingface.co/spaces/Qwen/Qwen3.5-Omni-Online-Demo",
+      "category": "Multimodal demo",
+      "description": "An official Qwen Space for experimenting with text, images, audio, and video in a hosted interface.",
+      "access": "Hosted demo; limits may apply",
+      "upload_note": "Cloud processing"
+    },
+    {
+      "name": "Qwen3-VL Demo",
+      "provider": "Qwen on Hugging Face",
+      "url": "https://huggingface.co/spaces/Qwen/Qwen3-VL-30B-A3B-Demo",
+      "category": "Vision-language demo",
+      "description": "An official visual-language demo useful for comparing image understanding and structured extraction prompts.",
+      "access": "Hosted demo; queue may apply",
+      "upload_note": "Cloud processing"
+    },
+    {
+      "name": "PaddleOCR-VL Online Demo",
+      "provider": "PaddlePaddle on Hugging Face",
+      "url": "https://huggingface.co/spaces/PaddlePaddle/PaddleOCR-VL_Online_Demo",
+      "category": "OCR and document parsing",
+      "description": "A document-focused experiment for extracting text, tables, formulas, and charts from images.",
+      "access": "Hosted demo; queue may apply",
+      "upload_note": "Cloud processing"
+    },
+    {
+      "name": "olmOCR Demo",
+      "provider": "Allen Institute for AI",
+      "url": "https://olmocr.allenai.org/",
+      "category": "PDF extraction",
+      "description": "A working demonstration of an open toolkit designed to turn PDFs into readable, structured text for downstream AI use.",
+      "access": "Public demo",
+      "upload_note": "Cloud processing"
+    },
+    {
+      "name": "ZeroGPU Spaces",
+      "provider": "Hugging Face",
+      "url": "https://huggingface.co/spaces?hardware=zerogpu&sort=trending",
+      "category": "Demo directory",
+      "description": "A changing directory of community experiments that use shared GPU capacity. Useful for discovering models without local GPU hardware.",
+      "access": "Free quota; account improves access",
+      "upload_note": "Review each Space before uploading"
+    },
+    {
+      "name": "Docling",
+      "provider": "Docling Project",
+      "url": "https://www.docling.ai/",
+      "category": "Open-source toolkit",
+      "description": "Documentation and examples for a local document-processing toolkit that detects layout, tables, reading order, and bounding boxes.",
+      "access": "Open source; local installation",
+      "upload_note": "Can run locally"
+    }
+  ]
+}
