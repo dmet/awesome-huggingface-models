@@ -7,3 +7,14 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+
+# Unredacted client drawings staged for precon-probe -- never commit these.
+# Only the redacted output belongs in the repo.
+realeyesvr/experiments/precon-probe/sheets/raw/
+
+# precon-probe scratch test-run output -- regenerable, not meant to be committed.
+# The source scripts (render.py, extract.py, score.py, build_truth.py) and
+# intentionally-kept sample images (sheets/, ../docs/doorsTest.png) are not covered.
+realeyesvr/experiments/precon-probe/pages*/
+realeyesvr/experiments/precon-probe/facts*.jsonl
+realeyesvr/experiments/precon-probe/truth*.jsonl
