@@ -15,9 +15,9 @@
   <main>
     <section class="page-hero blueprint-grid"><div class="container"><p class="eyebrow">Open workbench</p><h1>What is being tested</h1><p>This page separates measured progress from ideas still under investigation.</p></div></section>
     <section class="section"><div class="container research-layout">
-      <aside class="research-summary"><span class="status-pill">Current direction</span><h2>Qwen first, validation after</h2><p>Recent tests changed the pipeline. Qwen 3.5 now makes sense as the first visual gate, followed by deterministic processing and a targeted Claude review step.</p><a class="source-link" href="https://qwen.ai/blog?id=qwen3.5" target="_blank" rel="noopener noreferrer">Read the official Qwen 3.5 overview <span aria-hidden="true">↗</span></a></aside>
+      <aside class="research-summary"><span class="status-pill">Current direction</span><h2>Map the table, then let Qwen read it</h2><p>The current prototype uses an open-source structure review to propose row bands, then asks Qwen 3.5 to read small adjacent batches. Schema checks preserve uncertainty and surface anomalies for review.</p><a class="source-link" href="https://qwen.ai/blog?id=qwen3.5" target="_blank" rel="noopener noreferrer">Read the official Qwen 3.5 overview <span aria-hidden="true">↗</span></a></aside>
       <div class="research-notes">
-        <article><p class="note-meta">Validated direction</p><h3>Direct visual analysis is the initial gate</h3><p>The earlier approach began with local signal processing to find table regions. Recent results indicate that Qwen can understand the full sheet well enough to lead the process. Traditional detection remains useful as a fallback and independent check.</p></article>
+        <article><p class="note-meta">Working signal</p><h3>Row maps make misses visible</h3><p>A test schedule contains 17 door rows after its headers and footer are excluded. Image-guided extraction previously returned 15 unique records in a row-by-row run. The current batched experiment attaches source-row-band identifiers so a missing record can be traced to its specific image band. This is promising, not a benchmark claim: field-level verification and repeatable evaluation remain required.</p></article>
         <article><p class="note-meta">Current benchmark target</p><h3>Door and frame schedules</h3><p>Testing began with sheet A8.2 and focuses on door rows, dimensions, materials, hardware groups, frame types, ratings, and remarks. Merged cells and hardware-group blocks remain important stress cases.</p></article>
         <article><p class="note-meta">Evaluation principle</p><h3>“Almost 100%” needs a precise definition</h3><p>Table detection, row count, field extraction, normalized values, and final reviewed records are separate measures. The next benchmark should report each one so improvements remain meaningful.</p></article>
         <article><p class="note-meta">Long-term asset</p><h3>The schema and verified dataset matter most</h3><p>Models will change. A collection of hand-verified construction schedules, paired with clear schemas and source evidence, makes future models easier to compare and replace.</p></article>
@@ -36,18 +36,19 @@
       <div class="container">
         <div class="test-lab-heading">
           <div><p class="section-kicker">Planned working example</p><h2 class="display-title">The RealEyesVR Test Lab</h2></div>
-          <span class="build-badge">In development</span>
+          <span class="build-badge">Live research prototype</span>
         </div>
-        <p class="test-lab-lead">The Test Lab will let authenticated Hugging Face users try one focused version of the pipeline themselves. Shared ZeroGPU infrastructure supplies the temporary GPU; the user only needs a browser and a safe test image.</p>
+        <p class="test-lab-lead">The Test Lab lets authenticated Hugging Face users try one focused version of the pipeline themselves. Shared ZeroGPU infrastructure supplies the temporary GPU; the user only needs a browser and a safe test image. Capacity is shared, so a GPU queue or time limit can occur during active testing.</p>
         <div class="lab-flow" aria-label="Planned Test Lab workflow">
           <article><span>01</span><h3>Sign in</h3><p>Use a Hugging Face account so RealEyesVR does not store passwords.</p></article>
           <article><span>02</span><h3>Upload safely</h3><p>Submit one public, synthetic, or otherwise authorized schedule image.</p></article>
           <article><span>03</span><h3>Run Qwen</h3><p>ZeroGPU temporarily allocates shared GPU capacity for extraction.</p></article>
-          <article><span>04</span><h3>Check the result</h3><p>Review structured rows, validation warnings, source evidence, and raw JSON.</p></article>
+          <article><span>04</span><h3>Check the result</h3><p>Review structured rows, source-row-band warnings, evidence, and raw JSON.</p></article>
         </div>
+        <p><a href="https://huggingface.co/spaces/dmet2/realeyesvr-test-lab" class="btn-primary" target="_blank" rel="noopener noreferrer">Open the Test Lab ↗</a></p>
         <div class="lab-boundaries">
           <div><p class="note-meta">First test case</p><h3>Door and frame schedules</h3><p>One image, one known schema, and one measurable result. Broader drawing types come only after this workflow proves repeatable.</p></div>
-          <div><p class="note-meta">What it will measure</p><h3>Real-world behavior</h3><p>Processing time, row count, field accuracy, validation warnings, corrections, and whether the result was useful without expert guidance.</p></div>
+          <div><p class="note-meta">What it measures</p><h3>Real-world behavior</h3><p>Processing time, row count, source-row coverage, field accuracy, validation warnings, corrections, and whether the result was useful without expert guidance.</p></div>
           <div><p class="note-meta">Privacy boundary</p><h3>No confidential drawings</h3><p>The Test Lab will use cloud processing. Visitors must not upload client, employer, personal, or otherwise restricted information.</p></div>
         </div>
       </div>

@@ -6,11 +6,14 @@ def build_mock_extraction(source_filename: str) -> DoorScheduleExtraction:
     return DoorScheduleExtraction.model_validate(
         {
             "record_type": "door_schedule",
-            "schema_version": "1.0",
+            "schema_version": "1.1",
             "model_id": "simulation/no-model",
-            "prompt_version": "door-schedule-v0.1-mock",
+            "prompt_version": "door-schedule-v0.5-mock",
             "source_filename": source_filename,
             "extraction_confidence": "Medium",
+            "preload_reviewer": "local/mock-reviewer",
+            "observed_columns": ["Door Number", "Width", "Height", "Material"],
+            "estimated_source_rows": 2,
             "doors": [
                 {
                     "door_number": "101A",

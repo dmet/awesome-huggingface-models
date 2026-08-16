@@ -1,3 +1,8 @@
 gradio[oauth]==5.49.1
 pydantic==2.11.9
 Pillow==11.3.0
+spaces
+transformers>=5.0.0
+torchvision
+paddleocr[doc-parser]==3.3.2
+paddlepaddle==3.2.2

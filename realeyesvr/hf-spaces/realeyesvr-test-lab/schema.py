@@ -2,7 +2,6 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
-Material = Literal["HM", "WD", "AL", "GL", "FRP", "Other"]
 Confidence = Literal["High", "Medium", "Low"]
 
 
@@ -10,13 +9,23 @@ class DoorRecord(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     door_number: str = Field(min_length=1)
-    panel_count: int = Field(ge=1)
-    width_inches: float = Field(gt=0)
-    height_inches: float = Field(gt=0)
+    # This is an evidence pointer, not a door-schedule value: when Qwen receives
+    # a stacked crop it identifies the original detected row band it read.
+    source_row_band: int | None = Field(default=None, ge=1)
+    door_type: str | None = None
+    swing: str | None = None
+    panel_count: int | None = Field(default=None, ge=1)
+    width_inches: float | None = Field(default=None, gt=0)
+    height_inches: float | None = Field(default=None, gt=0)
     thickness_inches: float | None = Field(default=None, gt=0)
-    material: Material
+    material: str | None = None
+    finish: str | None = None
     hardware_group: str | None = None
+    frame_material: str | None = None
     frame_type: str | None = None
+    frame_trim: str | None = None
+    card_reader_required: bool | None = None
+    plan_notes: str | None = None
     fire_rating: str | None = None
     label_required: bool | None = None
     glazing: str | None = None
@@ -46,9 +55,13 @@ class DoorScheduleExtraction(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     record_type: Literal["door_schedule"] = "door_schedule"
-    schema_version: Literal["1.0"] = "1.0"
+    schema_version: Literal["1.1"] = "1.1"
     model_id: str
     prompt_version: str
     source_filename: str
     extraction_confidence: Confidence
+    preload_reviewer: str
+    observed_columns: list[str]
+    estimated_source_rows: int | None = Field(default=None, ge=0)
+    extraction_warnings: list[str] = Field(default_factory=list)
     doors: list[DoorRecord]

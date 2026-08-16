@@ -93,12 +93,25 @@
           </div>
           <p>AI starts the process. It does not get the final word.</p>
         </div>
+        <figure class="evidence-flow" aria-labelledby="evidence-flow-title">
+          <figcaption id="evidence-flow-title">A layered reading process keeps the drawing—not the model output—as the source of truth.</figcaption>
+          <div class="evidence-flow-track">
+            <article class="flow-stage source-stage"><span class="flow-index">01</span><h3>Source sheet</h3><div class="micro-schedule"><i></i><i></i><i></i><i></i></div><p>One schedule image</p></article>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <article class="flow-stage map-stage"><span class="flow-index">02</span><h3>Map the table</h3><div class="column-map"><i></i><i></i><i></i><i></i></div><p>Columns + 17 row bands</p></article>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <article class="flow-stage extract-stage"><span class="flow-index">03</span><h3>Read in batches</h3><div class="row-batches"><i>1–4</i><i>5–8</i><i>…</i></div><p>Qwen verifies up to 4 rows</p></article>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <article class="flow-stage check-stage"><span class="flow-index">04</span><h3>Check &amp; escalate</h3><div class="rfi-flag">RFI?</div><p>Schema rules flag anomalies</p></article>
+          </div>
+          <div class="evidence-flow-note"><span>Prototype signal</span><p>A 17-door-row schedule was mapped correctly. An earlier row-by-row run returned 15 unique records, while the current batched test records the exact source bands it reads or misses. A potentially incorrect source dimension was preserved for review rather than silently changed.</p></div>
+        </figure>
         <ol class="pipeline">
-          <li><span>01</span><div><h3>Read</h3><p>Qwen 3.5 examines the drawing and identifies useful schedules and fields.</p></div></li>
-          <li><span>02</span><div><h3>Structure</h3><p>Results are converted into a consistent schema with normalized names and units.</p></div></li>
-          <li><span>03</span><div><h3>Check</h3><p>Rules catch missing values, impossible results, duplicates, and broken references.</p></div></li>
-          <li><span>04</span><div><h3>Review</h3><p>Ambiguous records receive a second AI review or a focused human check.</p></div></li>
-          <li><span>05</span><div><h3>Connect</h3><p>Verified records enter the data twin with their sheet, region, and revision attached.</p></div></li>
+          <li><span>01</span><div><h3>Map</h3><p>A document reviewer identifies table structure and proposes rows and columns.</p></div></li>
+          <li><span>02</span><div><h3>Read</h3><p>Qwen 3.5 checks the source image and extracts small row batches instead of guessing from a whole sheet.</p></div></li>
+          <li><span>03</span><div><h3>Validate</h3><p>Schema and source-row-band checks distinguish readable records from missing, duplicated, or misplaced values.</p></div></li>
+          <li><span>04</span><div><h3>Escalate</h3><p>Unusual source values are preserved and surfaced for an RFI or focused human review.</p></div></li>
+          <li><span>05</span><div><h3>Connect</h3><p>Verified records enter the data twin with their sheet, region, revision, and review state attached.</p></div></li>
         </ol>
         <a href="services.html" class="text-link">Explore the full process <span>↗</span></a>
       </div>

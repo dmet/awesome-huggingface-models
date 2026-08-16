@@ -15,8 +15,11 @@ FILES = (
     "README.md",
     "app.py",
     "mock_data.py",
+    "qwen_extraction.py",
+    "row_segmentation.py",
     "requirements.txt",
     "schema.py",
+    "schema_review.py",
     "test_schema.py",
 )
 
@@ -30,7 +33,7 @@ def main() -> None:
         repo_id=REPO_ID,
         repo_type="space",
         operations=operations,
-        commit_message="Add authenticated mock Test Lab",
+        commit_message="Add row-band diagnostics to batched Qwen extraction v0.7.3",
     )
     print(f"Published commit: {result.commit_url}")
 

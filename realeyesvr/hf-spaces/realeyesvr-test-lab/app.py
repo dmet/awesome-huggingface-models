@@ -1,19 +1,42 @@
 import os
 import time
+import traceback
 
 import gradio as gr
 from mock_data import build_mock_extraction
 from pydantic import ValidationError
+from schema import DoorScheduleExtraction
 
 IS_HUGGING_FACE_SPACE = bool(os.getenv("SPACE_ID"))
+APP_VERSION = "0.7.3"
 
 if IS_HUGGING_FACE_SPACE:
     import spaces
+    from qwen_extraction import QwenDoorScheduleExtractor
+    from schema_review import (
+        PaddleScheduleReviewer,
+        ScheduleReview,
+        review_from_payload,
+        review_to_payload,
+    )
 
-    @spaces.GPU(duration=1)
-    def zero_gpu_healthcheck() -> str:
-        """Declare the GPU boundary required by ZeroGPU before Qwen is enabled."""
-        return "ZeroGPU boundary is available."
+    EXTRACTOR = QwenDoorScheduleExtractor()
+    REVIEWER = PaddleScheduleReviewer()
+
+    @spaces.GPU(duration=180)
+    def run_qwen_extraction(document_path: str, review_payload: dict[str, object]):
+        """Request a ZeroGPU allocation only for Qwen generation work."""
+        try:
+            review = review_from_payload(review_payload)
+            return {"ok": True, "result": EXTRACTOR.extract(document_path, review).model_dump()}
+        except Exception as error:
+            traceback.print_exc()
+            return {
+                "ok": False,
+                "error_type": type(error).__name__,
+                "error": str(error),
+                "detail": repr(error),
+            }
 
 
 CSS = """
@@ -23,12 +46,12 @@ CSS = """
 """
 
 
-def run_mock_extraction(
+def run_extraction(
     document_path: str | None,
     authorized_upload: bool,
     profile: gr.OAuthProfile | None,
 ):
-    """Exercise the complete UI and validation path without allocating a GPU."""
+    """Run Qwen in Spaces; retain a deterministic local-development fallback."""
     if IS_HUGGING_FACE_SPACE and profile is None:
         return (
             "### Sign in required\nUse the Hugging Face sign-in button before running a test.",
@@ -51,9 +74,9 @@ def run_mock_extraction(
         )
 
     extension = os.path.splitext(document_path)[1].lower()
-    if extension not in {".pdf", ".jpg", ".jpeg", ".png"}:
+    if extension not in {".jpg", ".jpeg", ".png"}:
         return (
-            "### Unsupported file\nUse a PDF, JPG, JPEG, or PNG document.",
+            "### Unsupported file\nFor the first Qwen test, use a JPG, JPEG, or PNG schedule image.",
             None,
             None,
         )
@@ -62,29 +85,53 @@ def run_mock_extraction(
     source_filename = os.path.basename(document_path)
 
     try:
-        extraction = build_mock_extraction(source_filename)
+        if IS_HUGGING_FACE_SPACE:
+            try:
+                review = REVIEWER.review(document_path)
+            except Exception as error:
+                review = ScheduleReview(
+                    reviewer_id="PaddleOCR/PP-StructureV3 (fallback)",
+                    observed_columns=(),
+                    estimated_rows=None,
+                    transcript="No preload transcript was available; inspect the image independently.",
+                    warnings=(f"Preload review failed: {type(error).__name__}: {error}",),
+                )
+            qwen_response = run_qwen_extraction(document_path, review_to_payload(review))
+            if not qwen_response["ok"]:
+                raise ValueError(
+                    f"Qwen {qwen_response['error_type']}: "
+                    f"{qwen_response['error']} ({qwen_response['detail']})"
+                )
+            extraction = DoorScheduleExtraction.model_validate(qwen_response["result"])
+        else:
+            extraction = build_mock_extraction(source_filename)
         result = extraction.model_dump(mode="json")
-    except ValidationError as error:
+    except (ValidationError, ValueError) as error:
         return (
-            "### Schema validation failed\nThe simulated result did not match the door-schedule schema.",
+            "### Extraction could not be validated\n"
+            "Qwen did not return a result that matches the door-schedule schema. "
+            "Try a clearer schedule image or review the validation details.",
             None,
-            {"errors": error.errors()},
+            {
+                "valid": False,
+                "error_type": type(error).__name__,
+                "errors": str(error),
+            },
         )
 
     elapsed = time.perf_counter() - started
     username = profile.username if profile is not None else "local tester"
+    mode = "Qwen extraction" if IS_HUGGING_FACE_SPACE else "Local simulation"
     status = (
-        "### Simulated extraction complete\n"
-        f"Signed in as **{username}** · validation passed · {len(result['doors'])} sample rows · "
-        f"{elapsed:.3f}s\n\n"
-        "⚠️ **No AI inference occurred. These rows were not read from the uploaded image.**"
+        f"### {mode} complete\n"
+        f"Signed in as **{username}** · schema validation passed · {len(result['doors'])} rows · "
+        f"{elapsed:.1f}s"
     )
     validation = {
         "valid": True,
         "schema_version": result["schema_version"],
         "warnings": [
-            "Simulation mode is enabled.",
-            "All returned door rows are fixtures for interface testing.",
+            "Results require source-drawing verification.",
             "Do not use this result for construction decisions.",
         ],
     }
@@ -98,8 +145,8 @@ with gr.Blocks(title="RealEyesVR Test Lab", css=CSS, theme=gr.themes.Base()) as 
         ### Construction drawings, made usable.
 
         <div class="lab-banner">
-        <strong>Interface test:</strong> This version validates the login, upload,
-        schema, and result experience. Qwen inference is not enabled yet.
+        <strong>Research prototype:</strong> Qwen reads one schedule image and the
+        result is then checked against the door-schedule schema.
         </div>
         """
     )
@@ -109,7 +156,8 @@ with gr.Blocks(title="RealEyesVR Test Lab", css=CSS, theme=gr.themes.Base()) as 
             gr.LoginButton("Sign in with Hugging Face", logout_value="Sign out ({})")
         else:
             gr.Markdown("**Local development:** Hugging Face sign-in is bypassed.")
-        gr.Markdown("**Test type:** Door and frame schedule · **Mode:** Simulated extraction")
+        gr.Markdown("**Test type:** Door and frame schedule · **Model:** Qwen 3.5 9B")
+        gr.Markdown(f"**Test Lab version:** {APP_VERSION}")
 
     gr.Markdown(
         """
@@ -125,15 +173,15 @@ with gr.Blocks(title="RealEyesVR Test Lab", css=CSS, theme=gr.themes.Base()) as 
         with gr.Column(scale=5):
             document = gr.File(
                 type="filepath",
-                file_types=[".pdf", ".jpg", ".jpeg", ".png"],
+                file_types=[".jpg", ".jpeg", ".png"],
                 file_count="single",
-                label="One door-schedule PDF or image",
+                label="One door-schedule image",
             )
             authorized = gr.Checkbox(
                 label="I am authorized to use this document for cloud-based testing.",
                 value=False,
             )
-            run_button = gr.Button("Run simulated extraction", variant="primary")
+            run_button = gr.Button("Run Qwen extraction", variant="primary")
 
         with gr.Column(scale=7):
             status = gr.Markdown("Sign in, upload a safe image, and confirm authorization.")
@@ -143,10 +191,10 @@ with gr.Blocks(title="RealEyesVR Test Lab", css=CSS, theme=gr.themes.Base()) as 
                 validation = gr.JSON(label="Schema checks and warnings")
 
     run_button.click(
-        fn=run_mock_extraction,
+        fn=run_extraction,
         inputs=[document, authorized],
         outputs=[status, result, validation],
-        api_name="run_mock_extraction",
+        api_name="run_extraction",
     )
 
     gr.Markdown(
