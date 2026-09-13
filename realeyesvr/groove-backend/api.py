@@ -24,8 +24,10 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 BACKEND_ROOT = Path(__file__).resolve().parent
-REPO_ROOT = BACKEND_ROOT.parents[1]
-WEB_ROOT = REPO_ROOT / "realeyesvr" / "website" / "groove"
+# In the repository the UI is a sibling of this backend; in the Docker image
+# only the backend is copied to /app, so this path simply does not exist and
+# the API runs without mounting a local UI.
+WEB_ROOT = BACKEND_ROOT.parent / "website" / "groove"
 DATA_ROOT = Path(os.getenv("GROOVE_DATA_ROOT", BACKEND_ROOT / "data")).resolve()
 MAX_UPLOAD_BYTES = int(os.getenv("GROOVE_MAX_UPLOAD_BYTES", str(100 * 1024 * 1024)))
 ALLOWED_AUDIO = {".mp3", ".wav", ".flac", ".m4a", ".ogg"}
