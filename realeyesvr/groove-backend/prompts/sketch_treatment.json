@@ -1,0 +1,41 @@
+{
+  "_note": "Rough-board aesthetic. Chosen because AI video's failure modes -- warped hands, unstable faces, temporal flicker, shot-to-shot inconsistency -- read as hand-drawn rather than broken.",
+
+  "use_lyrics": true,
+  "world": "an immense empty desert, cracked earth and distant rock",
+  "cast": "a lone figure",
+  "look": "rough graphite storyboard sketch, loose pencil hatching on off-white paper, heavy charcoal shadow, smudged edges, no colour, visible construction lines, hand-drawn animation feel, grainy paper texture",
+
+  "lens": "wide angle",
+
+  "arc": [
+    { "until": 0.25,
+      "size": ["extreme wide shot", "wide shot"],
+      "movement": ["static locked-off", "very slow push in"],
+      "direction": "left to right" },
+    { "until": 0.55,
+      "size": ["medium wide shot", "medium shot"],
+      "movement": ["handheld follow", "slow tracking shot"],
+      "direction": "left to right" },
+    { "until": 0.80,
+      "size": ["close up", "extreme close up"],
+      "movement": ["handheld push in", "static locked-off"],
+      "direction": "toward camera" },
+    { "until": 1.00,
+      "size": ["extreme close up", "extreme wide shot"],
+      "movement": ["slow pull back"],
+      "direction": "away from camera" }
+  ],
+
+  "sections": {
+    "Intro": { "hold": true, "size": "extreme wide shot",
+               "movement": "static locked-off", "direction": "left to right",
+               "subject": "a single figure crossing an immense empty desert" },
+    "Chorus": { "size": ["close up", "extreme close up"],
+                "movement": ["hard handheld", "snap push in"],
+                "direction": "toward camera" }
+  },
+
+  "camera_low": ["static locked-off"],
+  "camera_high": ["handheld push in"]
+}

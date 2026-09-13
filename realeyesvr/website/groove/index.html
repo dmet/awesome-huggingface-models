@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Groove — Music in. Worlds out.</title>
+  <meta name="description" content="An interactive lava lamp music video concept.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="scene">
+  <aside class="sidebar">
+    <a class="brand" href="./">Groove <small>BETA</small></a><p class="tagline">MUSIC IN.<br>WORLDS OUT.</p>
+    <nav aria-label="Main"><button class="nav active" data-panel="Create">⌂ <span>Create</span></button><button class="nav" data-panel="Library">▱ <span>Library</span></button><button class="nav" data-panel="Inspiration">✧ <span>Inspiration</span></button><button class="nav" data-panel="Community">♧ <span>Community</span></button></nav>
+    <p class="manifesto">Turn<br>Your Sound<br>Into a Story.</p><p class="caption">AI-POWERED MUSIC VIDEOS<br>FOR A MORE VISUAL WORLD.</p>
+    <p class="version">Groove · Visual prototype<br>Make.Believe.Create. ♡</p>
+  </aside>
+  <section class="lamp" aria-label="Create your music video">
+    <div class="liquid"><div class="heat"></div><div id="bubbles" aria-hidden="true"></div></div>
+    <button class="blob upload orange" id="upload"><span class="symbol">♫</span><span id="upload-label">Upload<br>Track</span></button>
+    <button class="blob style pink" id="style" aria-expanded="true"><span class="symbol">✦</span>Style</button>
+    <button class="blob storyboard purple" data-panel="Storyboard"><span class="symbol">▣</span>Storyboard</button>
+    <button class="blob motion coral" id="motion"><span class="symbol">╂</span>Motion</button>
+    <div class="presets" id="presets"><button class="blob mini desert gold" data-style="Desert">✧<br>Desert</button><button class="blob mini dream pink" data-style="Dreamlike">✧<br>Dreamlike</button><button class="blob mini neon blue" data-style="Neon">✧<br>Neon</button><button class="blob mini cinema coral" data-style="Cinematic">✧<br>Cinematic</button></div>
+    <section class="queue" aria-label="Selected video ingredients"><div id="queue-items"><span class="empty">Your world starts here</span></div><span class="queue-label">IN QUEUE <span id="count">0</span></span></section>
+    <button class="create" id="create">LET’S MAKE A VIDEO <span>→</span></button>
+  </section>
+  <aside class="right">
+    <div class="search"><label><span>⌕</span><input id="search" placeholder="Search styles, moods, or ideas…" aria-label="Search styles"></label><span class="avatar">J</span></div>
+    <section class="card feature"><div class="feature-art"><span class="script">Same Song.<br>New Worlds.</span><button class="play-preview" aria-label="About Desert Dreams" data-panel="Desert Dreams">▶</button></div><div class="feature-info"><div>Desert Dreams<small>A music video concept</small></div><span>0:30 ···</span></div></section>
+    <section class="card styles"><div class="section-title">Style Presets<button id="see-all">See All →</button></div><div class="tiles"><button data-style="Desert"><span class="tile t-desert"></span>Desert</button><button data-style="Dreamlike"><span class="tile t-dream"></span>Dreamlike</button><button data-style="Neon"><span class="tile t-neon"></span>Neon</button><button data-style="Cinematic"><span class="tile t-cinema"></span>Cinematic</button></div><p id="no-results" hidden>No matching styles. Try “Neon”.</p></section>
+    <section class="card quote"><span>〰</span><div>“Music gives shape<br>to what we feel.”<small>G R O O V E</small></div></section>
+  </aside>
+  <footer class="player"><button id="play" aria-label="Play uploaded track">▶</button><div class="track"><strong id="track-name">Your next world</strong><small id="track-artist">Upload a song to begin</small></div><span class="heart">♡</span><div class="wave" id="wave" aria-hidden="true"></div><span id="time">0:00</span><span class="player-copy">Good Things<br>Look Better in Motion.</span></footer>
+</main>
+<input id="file" type="file" accept="audio/*" hidden><audio id="audio"></audio>
+<div class="toast" id="toast" role="status"></div>
+<dialog id="dialog"><button class="close" aria-label="Close">×</button><p class="eyebrow">GROOVE · CONCEPT STUDIO</p><h1 id="dialog-title"></h1><div id="dialog-body"></div><button class="dialog-done">Back to the lamp →</button></dialog>
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script type="application/json" id="lamp-menu">
+{
+  "name": "Create",
+  "children": [
+    { "id": "upload", "name": "Upload track", "color": "amber", "action": { "type": "upload" } },
+    { "id": "style", "name": "Style", "color": "pink", "children": [
+      { "name": "Desert", "action": { "type": "style", "value": "Desert" } },
+      { "name": "Dreamlike", "color": "pink", "action": { "type": "style", "value": "Dreamlike" } },
+      { "name": "Neon", "color": "purple", "action": { "type": "style", "value": "Neon" } },
+      { "name": "Cinematic", "color": "coral", "action": { "type": "style", "value": "Cinematic" } }
+    ] },
+    { "id": "storyboard", "name": "Storyboard", "color": "purple", "children": [
+      { "name": "Opening", "action": { "type": "dialog", "text": "Upload and analyze a track to build its real beat-aligned opening." } },
+      { "name": "Verse", "action": { "type": "dialog", "text": "The analyzed storyboard places editable visual prompts against the track timeline." } },
+      { "name": "Chorus", "action": { "type": "dialog", "text": "Review the animatic before explicitly approving any paid Runway shots." } }
+    ] },
+    { "id": "motion", "name": "Motion", "color": "coral", "children": [
+      { "name": "Add motion", "action": { "type": "motion", "value": true } },
+      { "name": "Still world", "color": "amber", "action": { "type": "motion", "value": false } }
+    ] }
+  ]
+}
+</script>
+<script src="lava.js"></script>
+</body>
+</html>

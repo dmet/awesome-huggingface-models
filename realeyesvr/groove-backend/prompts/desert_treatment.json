@@ -1,0 +1,75 @@
+{
+  "_note": "A treatment, not a prompt. Runway gets one assembled prompt per shot, built from these parts and capped at 1000 UTF-16 units.",
+  "use_lyrics": false,
+  "world": "the Sonoran Desert on the U.S.-Mexico border, sun-bleached earth, rocky mountains, dry washes, towering saguaros",
+  "cast": "a small group of Mexican migrants travelling north on foot, men women and families",
+  "look": "cinematic realism, poetic documentary photography, natural skin texture, atmospheric dust, heat haze, dramatic natural light, restrained earth tones, shallow depth of field, subtle film grain, emotionally grounded",
+  "negative": "glossy commercial aesthetic, stereotypical imagery, sensationalism, melodrama, stock footage look",
+  "arc": [
+    {
+      "until": 0.25,
+      "camera": [
+        "enormous lonely extreme wide shot, the travellers tiny against the desert",
+        "static locked-off wide, endless horizon, shimmering heat distortion",
+        "slow aerial drift over cracked earth, no people in frame",
+        "wide shot from behind, a line of figures crossing open sand"
+      ]
+    },
+    {
+      "until": 0.55,
+      "camera": [
+        "medium tracking shot alongside the group, blinding midday sun",
+        "handheld follow at walking pace, dust clinging to clothing",
+        "low angle on boots sinking into loose sand",
+        "medium wide, figures picking a route through a dry wash"
+      ]
+    },
+    {
+      "until": 0.8,
+      "camera": [
+        "intimate handheld close-up on a weathered face covered in dust",
+        "close on tired eyes looking toward the horizon",
+        "close on a hand passing the last bottle of water to another traveller",
+        "handheld close, a parent helping a child across broken ground",
+        "close on exhausted footsteps, sweat and grit"
+      ]
+    },
+    {
+      "until": 0.93,
+      "camera": [
+        "wide shot on higher ground, late afternoon golden light breaking the heat",
+        "medium shot, travellers resting in the tiny shade of a desert tree",
+        "wide, distant signs of civilisation on the far horizon, quiet and uncertain"
+      ]
+    },
+    {
+      "until": 1.0,
+      "camera": [
+        "extreme close-up of a dust-covered face lit by the last warm sunlight, eyes fixed beyond camera",
+        "slow pull back from a lone figure to reveal the immense landscape and the long road ahead"
+      ]
+    }
+  ],
+  "sections": {
+    "Intro": {
+      "hold": true,
+      "camera": [
+        "enormous lonely extreme wide shot held still, the travellers tiny against an immense empty desert, shimmering heat distortion"
+      ]
+    },
+    "Outro": {
+      "bars": 4,
+      "camera": [
+        "extreme close-up of a dust-covered face lit by the last warm desert sunlight, eyes fixed on something beyond the camera",
+        "slow pull back from the face revealing the immense landscape and the long road still ahead",
+        "very wide, a lone line of footprints trailing back across the desert into golden haze"
+      ]
+    }
+  },
+  "camera_low": [
+    "slow drift forward"
+  ],
+  "camera_high": [
+    "handheld push-in"
+  ]
+}

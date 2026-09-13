@@ -18,3 +18,6 @@ realeyesvr/experiments/precon-probe/sheets/raw/
 realeyesvr/experiments/precon-probe/pages*/
 realeyesvr/experiments/precon-probe/facts*.jsonl
 realeyesvr/experiments/precon-probe/truth*.jsonl
+
+# Groove prototype uploads, job state, generated clips, and renders
+realeyesvr/groove-backend/data/

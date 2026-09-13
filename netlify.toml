@@ -6,6 +6,11 @@
   directory = "netlify/functions"
 
 [[redirects]]
+  from = "/groove"
+  to = "/groove/"
+  status = 301
+
+[[redirects]]
   from = "/*"
   to   = "/index.html"
   status = 200

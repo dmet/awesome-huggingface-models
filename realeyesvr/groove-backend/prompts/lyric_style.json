@@ -1,0 +1,13 @@
+{
+  "use_lyrics": true,
+  "look": "35mm film grain, anamorphic flare, bleached desert palette, harsh sun, shallow depth of field, cinematic",
+  "subjects": [
+    "an empty desert highway shimmering with heat, no people",
+    "cracked dry lake bed stretching to the horizon",
+    "a lone set of bootprints trailing across open sand",
+    "sun bleached power lines running into nothing",
+    "dust drifting low across an empty road"
+  ],
+  "camera_low": ["slow drift forward", "static locked-off wide", "gentle crane down", "almost imperceptible push-in"],
+  "camera_high": ["low tracking shot at speed", "handheld push-in", "fast whip pan", "snap zoom out"]
+}

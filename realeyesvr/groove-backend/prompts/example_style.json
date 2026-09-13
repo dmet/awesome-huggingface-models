@@ -1,0 +1,23 @@
+{
+  "look": "35mm film grain, anamorphic flare, teal and amber grade, shallow depth of field, cinematic",
+  "subjects": [
+    "an empty desert highway at night, heat shimmer over the asphalt",
+    "a lone figure walking away through tall dry grass",
+    "neon motel signage buzzing against a violet sky",
+    "rain sheeting across a windscreen, headlights smearing past",
+    "a dry lake bed cracked into hexagons under hard sun",
+    "power lines running to the horizon at dusk"
+  ],
+  "camera_low": [
+    "slow drift forward",
+    "static locked-off wide",
+    "gentle crane down",
+    "almost imperceptible push-in"
+  ],
+  "camera_high": [
+    "fast whip pan",
+    "handheld push-in",
+    "low tracking shot at speed",
+    "snap zoom out"
+  ]
+}

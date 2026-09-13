@@ -1,0 +1,21 @@
+﻿{
+  "name": "Create",
+  "children": [
+    { "id": "upload", "name": "Upload track", "color": "amber", "action": { "type": "upload" } },
+    { "id": "style", "name": "Style", "color": "pink", "children": [
+      { "name": "Desert", "action": { "type": "style", "value": "Desert" } },
+      { "name": "Dreamlike", "color": "pink", "action": { "type": "style", "value": "Dreamlike" } },
+      { "name": "Neon", "color": "purple", "action": { "type": "style", "value": "Neon" } },
+      { "name": "Cinematic", "color": "coral", "action": { "type": "style", "value": "Cinematic" } }
+    ] },
+    { "id": "storyboard", "name": "Storyboard", "color": "purple", "children": [
+      { "name": "Opening", "action": { "type": "dialog", "text": "Establish your world with a slow landscape reveal. This is a scene suggestion; editing and generation are not connected." } },
+      { "name": "Verse", "action": { "type": "dialog", "text": "Introduce a character and a visual motif that follows the melody. This is a scene suggestion; editing and generation are not connected." } },
+      { "name": "Chorus", "action": { "type": "dialog", "text": "Transform the world at the musical peak. This is a scene suggestion; editing and generation are not connected." } }
+    ] },
+    { "id": "motion", "name": "Motion", "color": "coral", "children": [
+      { "name": "Add motion", "action": { "type": "motion", "value": true } },
+      { "name": "Still world", "color": "amber", "action": { "type": "motion", "value": false } }
+    ] }
+  ]
+}
