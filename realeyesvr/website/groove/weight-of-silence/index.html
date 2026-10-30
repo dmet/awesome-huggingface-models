@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Weight of Silence · Groove</title>
+<meta name="description" content="Groove's first full music video, from a Suno song: the concept, the storyboard and live rough cut, the Runway shots and the finished cut.">
+<meta property="og:title" content="The Weight of Silence · Groove">
+<meta property="og:description" content="A Suno song turned into a music video: concept, storyboard, rough cut on the beat, and the final cut.">
+<meta property="og:image" content="panels/029.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Special+Elite&family=Caveat:wght@600;700&display=swap">
+<style>
+img{max-width:100%}[hidden]{display:none!important}
+/* Layout: a studio log in Groove's lava-lamp dark, scrolling from the finished
+   video down through the three build slices; the board is a paper sheet
+   pinned into the dark page, like a real storyboard on a studio wall. */
+:root {
+  color-scheme: dark;
+  --ink: #0c0910;          /* lamp-room black, faintly plum */
+  --glass: #18121c;        /* raised surfaces */
+  --line: #3a2b33;
+  --pearl: #f4e9df;        /* main text */
+  --muted: #a8979f;
+  --amber: #ffb547;        /* the lamp's heat */
+  --wax: #e64bc3;          /* pink wax */
+  --violet: #8f55f0;
+  --coral: #ff6f4f;
+  --paper: #ebe3d2;        /* the storyboard sheet */
+  --paper-edge: #d6cab2;
+  --slip: #f3eee2;         /* pasted typewriter slips */
+  --typed: #2b2622;
+  --marker: #fff3dc;       /* grease pencil on the panels */
+  --display: "Bricolage Grotesque", "Arial Narrow", Arial, sans-serif;
+  --body: "Instrument Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  --typewriter: "Special Elite", "Courier New", Courier, monospace;
+  --hand: "Caveat", "Segoe Print", "Comic Sans MS", cursive;
+}
+* { box-sizing: border-box }
+body {
+  margin: 0; background: var(--ink); color: var(--pearl);
+  font: 400 16px/1.6 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  overflow-x: hidden;
+}
+.wrap { max-width: 1180px; margin: 0 auto }
+a { color: var(--amber) }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.02em }
+p { margin: 0 }
+.eyebrow { font: 600 12px/1.4 var(--body); letter-spacing: .22em; text-transform: uppercase; color: var(--muted) }
+:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px }
+
+/* masthead */
+.mast { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-block: 22px 8px; flex-wrap: wrap }
+.brand { font: 800 34px/1 var(--display); letter-spacing: -0.04em }
+.brand small { font: 500 10px/1 var(--body); letter-spacing: .25em; color: var(--muted); vertical-align: top; margin-left: 8px }
+.mast .eyebrow { text-align: right }
+
+/* hero: the finished video in lamp glass */
+.hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(20px, 4vw, 56px); align-items: center; padding-block: 28px 40px }
+.hero h1 { font-size: clamp(42px, 6.4vw, 84px); line-height: .95; font-weight: 800 }
+.hero h1 span { display: block; color: var(--amber) }
+.logline { font-size: clamp(17px, 1.6vw, 20px); color: var(--pearl); margin-top: 22px; max-width: 34ch }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px }
+.fact { border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums }
+.fact b { color: var(--pearl); font-weight: 600 }
+.screen { position: relative; border-radius: 26px; padding: clamp(10px, 1.6vw, 18px);
+  background: radial-gradient(120% 90% at 50% 110%, #ff8a2f55, transparent 60%), radial-gradient(90% 80% at 10% 0%, #e64bc333, transparent 60%), var(--glass);
+  border: 1px solid #5a3a3a; box-shadow: 0 0 60px #ff7a2f22, inset 0 1px 0 #ffd9a733 }
+.screen::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: url("lamp.jpg") center 30%/cover; opacity: .18; filter: blur(14px) saturate(1.4); z-index: 0 }
+.screen video { position: relative; z-index: 1; display: block; width: 100%; aspect-ratio: 16/9; border-radius: 14px; background: #000 }
+.screen figcaption { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 13px; color: var(--muted); padding: 12px 6px 2px }
+.made { font: 700 15px/1 var(--hand); color: var(--amber); letter-spacing: .02em }
+
+/* spend strip */
+.spend { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--line); margin-bottom: 64px }
+.spend div { padding: 18px 16px 18px 0; display: grid; gap: 2px }
+.spend b { font: 700 clamp(22px, 2.6vw, 32px)/1.1 var(--display); font-variant-numeric: tabular-nums }
+.spend small { color: var(--muted); font-size: 13px; line-height: 1.4 }
+
+/* the chain */
+.chain { margin-bottom: 72px }
+.chain h2 { font-size: clamp(26px, 3vw, 36px); margin: 8px 0 22px }
+.stages { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; list-style: none; padding: 0; margin: 0 }
+.stage { display: grid; gap: 2px; padding: 12px 16px; border-radius: 46% 54% 52% 48% / 58% 48% 52% 42%; min-width: 118px; text-align: center;
+  background: radial-gradient(at 32% 18%, #ffffff40, transparent 30%), radial-gradient(at 60% 60%, var(--c1), var(--c2) 75%); box-shadow: 0 0 18px color-mix(in srgb, var(--c1) 40%, transparent) }
+.stage b { font: 700 16px/1.1 var(--display) }
+.stage small { font-size: 11px; opacity: .85 }
+.stage.s1 { --c1: #ff9a2c; --c2: #b94416 } .stage.s2 { --c1: #e64bc3; --c2: #8d1f86 } .stage.s3 { --c1: #8f55f0; --c2: #4a23a8 } .stage.pre { --c1: #6a5d64; --c2: #2c2328 }
+.gate { font: 700 13px/1 var(--hand); font-size: 20px; color: var(--amber); padding: 0 4px }
+.legend { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 16px; font-size: 13px; color: var(--muted) }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; background: var(--c1) }
+
+/* slice sections */
+.slice { padding-block: 24px 72px; border-top: 1px solid var(--line) }
+.slice-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 16px 48px; align-items: end; margin-bottom: 36px }
+.slice-head h2 { font-size: clamp(34px, 4.6vw, 60px); line-height: 1 }
+.slice-head h2 em { font-style: normal; color: var(--c, var(--amber)) }
+.slice-head p { color: var(--muted); max-width: 60ch }
+.slice-head p b { color: var(--pearl); font-weight: 500 }
+#concept { --c: var(--amber) } #board { --c: var(--wax) } #render { --c: #b48cff }
+
+/* slice 1 */
+.concept-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px }
+.quote { font: 500 clamp(22px, 2.4vw, 30px)/1.3 var(--display); letter-spacing: -0.01em }
+.world { color: var(--muted); margin-top: 18px; max-width: 62ch }
+.palette { display: flex; margin-top: 26px; border-radius: 12px; overflow: hidden; height: 54px }
+.palette span { flex: 1 }
+.palette-note { font-size: 13px; color: var(--muted); margin-top: 8px }
+.arc { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 }
+.arc li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; line-height: 1.5 }
+.arc time { font: 400 13px/1.6 var(--typewriter); color: var(--amber); font-variant-numeric: tabular-nums }
+.timeline { display: flex; height: 8px; border-radius: 4px; overflow: hidden; margin: 6px 0 14px; gap: 2px }
+.timeline span { background: var(--amber); opacity: calc(.3 + var(--en, .5) * .7) }
+.refs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 44px }
+.ref { background: var(--glass); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: grid; grid-template-rows: auto 1fr }
+.ref img { display: block; width: 100%; aspect-ratio: 16/10; object-fit: cover; background: #000 }
+.ref .txt { padding: 12px 14px 14px; display: grid; gap: 6px; align-content: start }
+.ref h3 { font-size: 16px; text-transform: capitalize }
+.ref p { font-size: 13px; color: var(--muted); line-height: 1.45 }
+.role { font: 600 10px/1 var(--body); letter-spacing: .16em; text-transform: uppercase; color: var(--amber) }
+.ref.motif { background: linear-gradient(160deg, #2a1830, var(--glass)) }
+.ref.motif .ph { aspect-ratio: 16/10; display: grid; place-items: center; font: 700 30px/1 var(--hand); color: var(--wax); padding: 12px; text-align: center }
+
+/* slice 2: live rough cut */
+.rough { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 28px; align-items: center; margin-bottom: 48px }
+.rough-stage { position: relative; border-radius: 16px; overflow: hidden; background: #000; border: 1px solid var(--line) }
+.rough-stage canvas { display: block; width: 100%; aspect-ratio: 16/9 }
+.rough-bar { display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: var(--glass) }
+.play { width: 44px; height: 44px; border: 0; border-radius: 50%; cursor: pointer; flex: none; color: #1b0f14; font-size: 16px;
+  background: radial-gradient(at 35% 25%, #ffe6b0, var(--amber) 55%, #c4561c) }
+.scrub { flex: 1; min-width: 0; accent-color: var(--wax) }
+.clock { font: 400 13px/1 var(--typewriter); color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap }
+.rough-copy { display: grid; gap: 14px; color: var(--muted) }
+.rough-copy b { color: var(--pearl); font-weight: 500 }
+
+/* slice 2: the sheet */
+.sheet { background: var(--paper); color: var(--typed); border-radius: 6px; padding: clamp(16px, 3vw, 36px);
+  box-shadow: 0 30px 80px #0009, inset 0 0 0 1px var(--paper-edge), inset 0 0 120px #b9a98a55;
+  background-image: radial-gradient(#0000000a 1px, transparent 1px); background-size: 5px 5px; position: relative }
+.sheet-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px 24px; flex-wrap: wrap; border-bottom: 2px solid var(--typed); padding-bottom: 10px; margin-bottom: 22px; font-family: var(--typewriter) }
+.sheet-head strong { font: 400 clamp(20px, 2.6vw, 28px)/1 var(--typewriter); letter-spacing: .04em }
+.sheet-head span { font-size: 13px }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px }
+.filters button { font: 400 13px/1 var(--typewriter); color: var(--typed); background: transparent; border: 1.5px solid var(--typed); border-radius: 3px; padding: 7px 10px; cursor: pointer }
+.filters button[aria-pressed="true"] { background: var(--typed); color: var(--paper) }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px 22px }
+.card { display: grid; gap: 0; align-content: start }
+.card-top { display: grid; grid-template-columns: auto 1fr auto; font: 400 11px/1 var(--typewriter); border: 1.5px solid var(--typed); border-bottom: 0 }
+.card-top span { padding: 6px 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.card-top span + span { border-left: 1.5px solid var(--typed) }
+.frame { position: relative; border: 1.5px solid var(--typed); background: #111; aspect-ratio: 16/9; overflow: hidden }
+.frame img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(.92) contrast(1.02) }
+.frame svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible }
+.frame .stroke { fill: none; stroke: var(--marker); stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 0 }
+.frame .under { fill: none; stroke: #1a0f0c; stroke-opacity: .55; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 0 }
+.frame svg text { font: 700 13px var(--hand); fill: var(--marker); paint-order: stroke; stroke: #1a0f0c; stroke-width: 2.4px; stroke-opacity: .6; letter-spacing: .03em }
+.card.drawing .stroke, .card.drawing .under { animation: draw 1.1s cubic-bezier(.6, .05, .3, 1) both }
+.card.drawing svg text { animation: fade .5s .8s both }
+@keyframes draw { from { stroke-dashoffset: 1 } to { stroke-dashoffset: 0 } }
+@keyframes fade { from { opacity: 0 } }
+.tag { position: absolute; top: 8px; right: 8px; font: 600 10px/1 var(--body); letter-spacing: .12em; text-transform: uppercase; padding: 5px 7px; border-radius: 3px; color: #fff }
+.tag.generator { background: #6d3df0 } .tag.procedural { background: #b23a8f } .tag.still { background: #00000080 }
+.slip { font: 400 12.5px/1.45 var(--typewriter); background: var(--slip); margin: 8px 6px 0 0; padding: 7px 10px 8px; box-shadow: 1px 1px 0 #0000001a, 0 1px 3px #0000002a; rotate: var(--tilt, -0.4deg); min-height: 4.6em }
+.slip .caret { display: inline-block; width: .55em; border-bottom: 1.5px solid var(--typed); animation: blink .7s steps(1) infinite; margin-left: 1px }
+@keyframes blink { 50% { opacity: 0 } }
+.slip i { font-style: normal; text-decoration: underline }
+.lyric { font: 600 17px/1.2 var(--hand); color: #6b3d57; margin: 6px 4px 0 }
+.sheet-foot { margin-top: 28px; font: 400 12px/1.5 var(--typewriter); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-top: 1.5px solid var(--typed); padding-top: 10px }
+.sig { font: 700 22px/1 var(--hand); color: #6b3d57 }
+
+/* slice 3 */
+.clips { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px }
+.clip { display: grid; gap: 10px; align-content: start }
+.clip video { width: 100%; aspect-ratio: 16/9; display: block; border-radius: 10px; background: #000; object-fit: cover }
+.clip .meta { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums }
+.clip .meta b { color: var(--pearl); font-weight: 600 }
+.clip p { font-size: 13.5px; color: var(--muted); line-height: 1.45 }
+.test { margin-top: 64px; background: var(--glass); border: 1px solid var(--line); border-radius: 20px; padding: clamp(18px, 3vw, 32px) }
+.test h3 { font-size: clamp(22px, 2.4vw, 30px); margin: 6px 0 10px }
+.test > p { color: var(--muted); max-width: 70ch }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 24px }
+.trio figure { margin: 0; display: grid; gap: 10px; align-content: start }
+.trio video { width: 100%; aspect-ratio: 16/9; border-radius: 10px; display: block; background: #000 }
+.trio figcaption { font-size: 13.5px; color: var(--muted); line-height: 1.45 }
+.trio figcaption b { display: block; color: var(--pearl); font: 700 16px/1.3 var(--display); margin-bottom: 2px }
+.verdict { margin-top: 22px; font-size: 15px; max-width: 72ch }
+.verdict b { color: var(--amber); font-weight: 600 }
+.motion-line { font: 400 14px/1.5 var(--typewriter); background: var(--slip); color: var(--typed); padding: 10px 14px; margin-top: 16px; rotate: -.3deg; max-width: 80ch }
+
+/* next */
+.next { padding-block: 24px 72px; border-top: 1px solid var(--line) }
+.next h2 { font-size: clamp(28px, 3.4vw, 44px); margin-bottom: 24px }
+.next ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px }
+.next li { border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; display: grid; gap: 6px; align-content: start }
+.next li b { font: 700 17px/1.25 var(--display) }
+.next li span { color: var(--muted); font-size: 14px; line-height: 1.5 }
+footer { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-block: 28px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px }
+
+@media (max-width: 960px) {
+  .hero, .concept-grid, .rough, .slice-head { grid-template-columns: minmax(0, 1fr) }
+  .refs { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .clips { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .next ul { grid-template-columns: minmax(0, 1fr) }
+  .spend { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+}
+@media (max-width: 560px) {
+  .cards, .clips, .trio { grid-template-columns: minmax(0, 1fr) }
+  .mast .eyebrow { text-align: left }
+  .stage { min-width: 0; padding: 10px 12px }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before { animation: none !important; transition: none !important }
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <a class="brand" href="../" style="color:inherit;text-decoration:none">Groove<small>BETA</small></a>
+    <div class="eyebrow">Studio log · first full video · Oct 29, 2026</div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">A Suno song, made into a music video</p>
+      <h1>The Weight <span>of Silence</span></h1>
+      <p class="logline" id="logline"></p>
+      <div class="facts" id="facts"></div>
+    </div>
+    <figure class="screen" style="margin:0">
+      <video id="cut" src="cut.mp4" poster="panels/029.jpg" controls playsinline preload="metadata"></video>
+      <figcaption><span>The whole song, cut on the beats: 22 stills, 6 scene holds, 4 Runway shots</span><span class="made">Made with Groove</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="spend" aria-label="What it cost">
+    <div><b id="cost-cut">$2.24</b><small>images and video in this cut (224 credits)</small></div>
+    <div><b>$0.32</b><small>32 storyboard panels on Muse, 1 credit each</small></div>
+    <div><b>$1.92</b><small>4 Runway shots, 30 s of generated video</small></div>
+    <div><b>$0</b><small>stills, motion, beat flashes and the edit: all local</small></div>
+  </section>
+
+  <section class="chain" aria-labelledby="chain-h">
+    <p class="eyebrow">How it works</p>
+    <h2 id="chain-h">Nothing costs money until you've seen it on the beat.</h2>
+    <ol class="stages">
+      <li class="stage pre"><b>Listen</b><small>beats, bars, lyrics</small></li>
+      <li class="stage pre"><b>Inspire</b><small>mood, style, 1 photo</small></li>
+      <li class="stage s1"><b>Concept</b><small>Claude writes it</small></li>
+      <li class="gate" aria-label="Gate 1">gate 1 ✓</li>
+      <li class="stage s2"><b>Notes</b><small>one per shot</small></li>
+      <li class="stage s2"><b>Board</b><small>panels + rough cut</small></li>
+      <li class="gate" aria-label="Gate 2">gate 2 ✓</li>
+      <li class="stage s3"><b>Render</b><small>per-shot path</small></li>
+      <li class="stage s3"><b>Cut</b><small>on the downbeats</small></li>
+    </ol>
+    <div class="legend">
+      <span style="--c1:#ff9a2c"><i></i>Slice 1: the concept</span>
+      <span style="--c1:#e64bc3"><i></i>Slice 2: the board</span>
+      <span style="--c1:#8f55f0"><i></i>Slice 3: the render</span>
+      <span style="--c1:#6a5d64"><i></i>Already in the pipeline</span>
+    </div>
+  </section>
+
+  <section class="slice" id="concept">
+    <div class="slice-head">
+      <div><p class="eyebrow">Slice 1 · Concept · gate 1</p><h2>A treatment <em>before</em> a single frame.</h2></div>
+      <p>From the lyrics, the beat map, three mood words and one nebula photo, Claude writes the idea, the arc section by section, the motifs and the palette. <b>Cost: a few cents of text.</b> You edit it and approve it before anything is drawn.</p>
+    </div>
+    <div class="concept-grid">
+      <div>
+        <p class="eyebrow" style="margin-bottom:10px">The idea</p>
+        <p class="quote" id="quote"></p>
+        <p class="world" id="world"></p>
+        <div class="palette" aria-label="Palette">
+          <span style="background:#f1e9df"></span><span style="background:#b9a7dc"></span><span style="background:#e4c98c"></span><span style="background:#07060b"></span><span style="background:#cfe2ff"></span><span style="background:#ff6f55"></span>
+        </div>
+        <p class="palette-note" id="palette"></p>
+      </div>
+      <div>
+        <p class="eyebrow">The arc, section by section</p>
+        <div class="timeline" id="timeline" aria-hidden="true"></div>
+        <ol class="arc" id="arc"></ol>
+      </div>
+    </div>
+    <div class="refs" id="refs"></div>
+  </section>
+
+  <section class="slice" id="board">
+    <div class="slice-head">
+      <div><p class="eyebrow">Slice 2 · Board · gate 2</p><h2>See it on the beat, <em>for 32 cents.</em></h2></div>
+      <p>Claude writes one note per shot, timed to the bars, and proposes how each one gets made. Every note becomes a panel, and the board plays as a live rough cut under the song. <b>This is the free teaser: no generated video yet.</b> You flip shots, swap in your own art, then approve.</p>
+    </div>
+    <div class="rough">
+      <div class="rough-stage">
+        <canvas id="rough" width="1280" height="720" aria-label="Live rough cut of the storyboard panels"></canvas>
+        <div class="rough-bar">
+          <button class="play" id="rplay" aria-label="Play the rough cut">▶</button>
+          <input class="scrub" id="rscrub" type="range" min="0" max="182" step="0.1" value="0" aria-label="Position in the song">
+          <span class="clock" id="rclock">0:00 / 3:02</span>
+        </div>
+        <audio id="song" src="song.mp3" preload="none"></audio>
+      </div>
+      <div class="rough-copy">
+        <p><b>Played live in the browser,</b> not rendered. Each panel holds for its exact bars, drifts and zooms, and flashes on the beat, brighter on downbeats.</p>
+        <p>On the real board, an edit shows up instantly. Video is only made on export.</p>
+        <p>Watching this, 12 of the 16 shots Claude proposed for Runway turned out to work as stills. That took the video budget from 470 credits to 150.</p>
+      </div>
+    </div>
+
+    <div class="sheet">
+      <div class="sheet-head"><strong>STORYBOARD</strong><span>PROJECT: The Weight of Silence &nbsp; · &nbsp; 32 SHOTS &nbsp; · &nbsp; 16:9 &nbsp; · &nbsp; 122 BPM</span></div>
+      <div class="filters" role="group" aria-label="Show shots">
+        <button type="button" data-f="all" aria-pressed="true">ALL 32</button>
+        <button type="button" data-f="generator" aria-pressed="false">RUNWAY 4</button>
+        <button type="button" data-f="still" aria-pressed="false">STILL 22</button>
+        <button type="button" data-f="procedural" aria-pressed="false">SCENE 6</button>
+      </div>
+      <div class="cards" id="cards"></div>
+      <div class="sheet-foot"><span>Panels: Muse Image, 1 credit each. Notes: Claude. Arrows: the move each shot makes in the cut.</span><span class="sig">approved ✓</span></div>
+    </div>
+  </section>
+
+  <section class="slice" id="render">
+    <div class="slice-head">
+      <div><p class="eyebrow">Slice 3 · Render · cut</p><h2>Pay only for <em>the shots that move.</em></h2></div>
+      <p>Each approved panel becomes the first frame of its video, so the Runway shots match the board. Every request is checked against a credit limit, saved the moment it's sent, and never bought twice. <b>Four shots, 150 credits, exactly as quoted.</b> Stills and the edit are made locally for free.</p>
+    </div>
+    <div class="clips" id="clips"></div>
+
+    <div class="test">
+      <p class="eyebrow">What we learned</p>
+      <h3>The first renders were living photos, so we tested the prompt.</h3>
+      <p>Shot 29, the star leaving her hands. The first prompt described the picture, which Runway already has. The fix was a prompt that only says what moves. Same panel, same 6 seconds:</p>
+      <div class="trio">
+        <figure><video src="clips/029.mp4" muted loop playsinline preload="none" data-auto></video><figcaption><b>Picture prompt · Gen-4 Turbo</b>30 credits. Barely moves: a slow drift.</figcaption></figure>
+        <figure><video src="clips/029_turbo.mp4" muted loop playsinline preload="none" data-auto></video><figcaption><b>Motion prompt · Gen-4 Turbo</b>30 credits. She moves, the camera tilts up, and it stays true to the panel.</figcaption></figure>
+        <figure><video src="clips/029_g45.mp4" muted loop playsinline preload="none" data-auto></video><figcaption><b>Motion prompt · Gen-4.5</b>72 credits. Fully cinematic, but it drifts from the panel. Used in this cut.</figcaption></figure>
+      </div>
+      <p class="motion-line">The glass jar slips from her fingers and tumbles away below her, spilling light. She arches back and spreads her arms wide, hair and cardigan lifting and rippling as if underwater. Overhead the star swells and flares. The camera slowly tilts up, following her gaze.</p>
+      <p class="verdict"><b>Next:</b> every Runway shot gets its own motion line. Gen-4 Turbo stays the default, and Gen-4.5 becomes a per-shot upgrade for the big moments.</p>
+    </div>
+  </section>
+
+  <section class="next" aria-labelledby="next-h">
+    <p class="eyebrow">Where it goes next</p>
+    <h2 id="next-h">From pipeline to Groove</h2>
+    <ul>
+      <li><b>Motion lines on the board</b><span>Claude writes what each Runway shot does, first frame to last, and you edit it next to the panel.</span></li>
+      <li><b>Styles from recipes</b><span>Looks worth borrowing become Groove styles that shape the concept, the panels and the video together.</span></li>
+      <li><b>The teaser as marketing</b><span>Export the stills cut free with a small "Made with Groove" mark, ready to post.</span></li>
+      <li><b>Live scenes</b><span>The procedural nebula, flight and weight scenes replace the six held panels, at no credit cost.</span></li>
+      <li><b>Any generator</b><span>Runway is the first. Other models plug into the same render step, each priced at the board.</span></li>
+      <li><b>The lamp</b><span>All of this behind the Groove lava lamp: upload a track, pick a world, watch it on the beat.</span></li>
+    </ul>
+  </section>
+
+  <footer><span><a href="../">← Back to the lamp</a> · <a href="/">RealEyesVR</a></span><span>Song made with Suno. Panels and video: Runway. Concept and notes: Claude.</span></footer>
+</div>
+
+<script type="application/json" id="data">{"title": "The Weight of Silence", "logline": "A sleepless woman carries a small, impossibly heavy star through the flooded rooms of her house until the ceiling gives way and she lets it go into open sky.", "world": "A quiet house at the bottom of a soundless night: hallways standing in ankle-deep still water, furniture drifting a hand's breadth off the floor, doors that open onto weather instead of rooms. Everything is hushed and slightly too slow, as if the air were deep water. The only loud thing is a fist-sized star the woman keeps in a glass jar — it presses her shoulders down, bleaches her hands white-blue, and throws a red halo on every wall. As the music opens, the house loses its edges: wallpaper becomes dust lanes, the staircase becomes a column of light, and the ceiling peels back into the nebula that has been pressing on the roof the whole time.", "palette": "Pearl, lavender and pale gold, with deep ink-black negative space; one saturated accent per scene, moving from cold blue-white at the core to a flushed coral-red at the outer edges, exactly as in the nebula plate.", "style": "Dreamlike", "mood": ["heavy", "suspended", "slowly opening up"], "bpm": 122.3, "duration": 182.214, "beats": [20.096, 20.587, 21.077, 21.568, 22.059, 22.549, 23.029, 23.509, 23.989, 24.491, 24.992, 25.493, 25.995, 26.496, 26.997, 27.499, 28.0, 28.501, 29.003, 29.504, 30.005, 30.507, 31.008, 31.499, 31.989, 32.48, 32.971, 33.461, 33.952, 34.443, 34.933, 35.424, 35.915, 36.405, 36.896, 37.387, 37.877, 38.379, 38.88, 39.381, 39.883, 40.384, 40.885, 41.387, 41.888, 42.379, 42.869, 43.36, 43.851, 44.341, 44.832, 45.333, 45.824, 46.315, 46.805, 47.296, 47.787, 48.288, 48.779, 49.269, 49.76, 50.261, 50.752, 51.243, 51.733, 52.224, 52.715, 53.205, 53.696, 54.197, 54.688, 55.179, 55.669, 56.171, 56.661, 57.152, 57.643, 58.144, 58.635, 59.125, 59.616, 60.117, 60.608, 61.099, 61.589, 62.091, 62.581, 63.083, 63.573, 64.064, 64.565, 65.056, 65.547, 66.037, 66.528, 67.019, 67.52, 68.011, 68.501, 68.992, 69.483, 69.984, 70.475, 70.976, 71.467, 71.957, 72.448, 72.949, 73.44, 73.941, 74.421, 74.923, 75.413, 75.904, 76.395, 76.896, 77.387, 77.888, 78.379, 78.869, 79.36, 79.861, 80.352, 80.843, 81.333, 81.835, 82.325, 82.816, 83.307, 83.808, 84.299, 84.8, 85.28, 85.792, 86.272, 86.773, 87.264, 87.755, 88.245, 88.757, 89.237, 89.739, 90.229, 90.731, 91.221, 91.712, 92.213, 92.704, 93.184, 93.696, 94.187, 94.688, 95.179, 95.669, 96.171, 96.661, 97.152, 97.653, 98.144, 98.635, 99.136, 99.637, 100.128, 100.608, 101.109, 101.6, 102.101, 102.603, 103.093, 103.584, 104.085, 104.576, 105.067, 105.557, 106.059, 106.56, 107.051, 107.552, 108.043, 108.544, 109.024, 109.515, 110.016, 110.517, 111.008, 111.509, 112.0, 112.491, 112.981, 113.483, 113.973, 114.475, 114.965, 115.456, 115.957, 116.459, 116.939, 117.461, 117.941, 118.432, 118.923, 119.424, 119.915, 120.416, 120.896, 121.408, 121.899, 122.389, 122.891, 123.381, 123.883, 124.373, 124.864, 125.376, 125.867, 126.357, 126.848, 127.349, 127.84, 128.341, 128.832, 129.333, 129.824, 130.315, 130.816, 131.307, 131.797, 132.299, 132.768, 133.28, 133.771, 134.272, 134.763, 135.253, 135.755, 136.245, 136.736, 137.237, 137.728, 138.229, 138.72, 139.211, 139.712, 140.203, 140.693, 141.205, 141.696, 142.187, 142.688, 143.179, 143.68, 144.171, 144.661, 145.163, 145.653, 146.155, 146.645, 147.136, 147.637, 148.128, 148.629, 149.12, 149.621, 150.123, 150.613, 151.104, 151.595, 152.096, 152.587, 153.099, 153.579, 154.08, 154.581, 155.061, 155.563, 156.064, 156.544, 157.056, 157.547, 158.048, 158.528, 159.029, 159.52, 160.021, 160.512, 161.013, 161.515, 162.016, 162.517, 163.019, 163.52, 164.021, 164.512, 165.003, 165.493, 165.984, 166.475, 166.965, 167.456, 167.957, 168.459, 168.96, 169.461, 169.963, 170.453, 170.955, 171.445, 171.947, 172.437, 172.949, 173.44, 173.941, 174.432, 174.944, 175.435, 175.936, 176.427, 176.939, 177.429], "downbeats": [0.469, 2.432, 4.395, 6.357, 8.32, 10.283, 12.245, 14.208, 16.171, 18.133, 20.096, 22.059, 23.989, 25.995, 28.0, 30.005, 31.989, 33.952, 35.915, 37.877, 39.883, 41.888, 43.851, 45.824, 47.787, 49.76, 51.733, 53.696, 55.669, 57.643, 59.616, 61.589, 63.573, 65.547, 67.52, 69.483, 71.467, 73.44, 75.413, 77.387, 79.36, 81.333, 83.307, 85.28, 87.264, 89.237, 91.221, 93.184, 95.179, 97.152, 99.136, 101.109, 103.093, 105.067, 107.051, 109.024, 111.008, 112.981, 114.965, 116.939, 118.923, 120.896, 122.891, 124.864, 126.848, 128.832, 130.816, 132.768, 134.763, 136.736, 138.72, 140.693, 142.688, 144.661, 146.645, 148.629, 150.613, 152.587, 154.581, 156.544, 158.528, 160.512, 162.517, 164.512, 166.475, 168.459, 170.453, 172.437, 174.432, 176.427], "sections": [{"n": 0, "purpose": "Long cold open: the drowned bedroom in near-darkness, camera drifting a few centimetres a second, the jar's glow discovered slowly behind the bed as the woman lies awake and does not move.", "s": 0.0, "e": 45.824, "shots": 6}, {"n": 1, "purpose": "She sits up and lifts the jar; its weight is wrong, it bends her wrists and sinks her knees — the first sign that the light is heavy.", "s": 45.824, "e": 61.589, "shots": 2}, {"n": 2, "purpose": "Quiet beat: she stands still in the hallway water with one palm on her sternum while cups, keys and photographs hang suspended around her.", "s": 61.589, "e": 69.483, "shots": 1}, {"n": 3, "purpose": "First lift in energy — she carries the jar up the stairwell, water pouring off each step, the top of the flight already showing black sky and gold stars.", "s": 69.483, "e": 77.387, "shots": 2}, {"n": 4, "purpose": "Scale shift: the stairwell walls recede until she is climbing a staircase a kilometre wide, her figure tiny against red halo light.", "s": 77.387, "e": 85.28, "shots": 1}, {"n": 5, "purpose": "Doors along the landing open one by one onto weather — rain, snow, a bright pale field — while she keeps walking past them.", "s": 85.28, "e": 93.184, "shots": 1}, {"n": 6, "purpose": "She stops at the last door, sets the jar down on the floorboards, and the red halo spreads outward across the wallpaper like a tide.", "s": 93.184, "e": 101.109, "shots": 1}, {"n": 7, "purpose": "Longest movement, the slow opening: the ceiling peels back in sheets of wallpaper that become dust lanes; the house dissolves around her into the nebula, the floating debris rising past her face, her hand coming off her chest at last as she looks up.", "s": 101.109, "e": 156.544, "shots": 14}, {"n": 8, "purpose": "Peak: she opens the jar and the star leaves her hands, blooming into the blinding spiked core with its blue-white shell and coral halo — her shoulders straighten for the first time.", "s": 156.544, "e": 166.475, "shots": 2}, {"n": 9, "purpose": "Resolution: the empty kitchen chair in the pale foggy field, the woman seated small beneath the whole lit sky, the empty jar on its side beside her, final slow pull back into black and gold stars.", "s": 166.475, "e": 182.214, "shots": 2}], "refs": [{"id": "nebula", "role": "look", "description": "Deep-space photograph look: a blinding white star core with spiked rays, a blue-white inner shell of streaked filaments, a thick coral-red outer halo, all on black studded with golden diffraction-spiked stars.", "img": "plates/nebula.jpg", "source": "your photo"}, {"id": "keeper", "role": "character", "description": "A woman in her thirties, dark hair wet and loose, wearing a pale grey slip and an oversized knitted cardigan, barefoot, shoulders hunched as if carrying something heavy she will not set down.", "img": "plates/keeper.jpg", "source": "drawn, Muse"}, {"id": "drowned_room", "role": "place", "description": "A modest bedroom standing in two inches of perfectly still water, bed and chair floating a hand's breadth above the floor, wallpaper peeling into drifting flakes, one tall window full of starless black.", "img": "plates/drowned_room.jpg", "source": "drawn, Muse"}, {"id": "stair_hall", "role": "place", "description": "A narrow house stairwell seen from below, banisters wrapped in haze, each step glowing faintly from underneath, the top of the flight dissolving into open night sky instead of a landing.", "img": "plates/stair_hall.jpg", "source": "drawn, Muse"}, {"id": "open_field", "role": "place", "description": "A flat pale field of low fog at night with a single kitchen chair standing in it, horizon unbroken, the whole sky overhead occupied by a vast luminous cloud.", "img": "plates/open_field.jpg", "source": "drawn, Muse"}, {"id": "star_jar", "role": "motif", "description": "A clamp-lid glass jar holding a fist-sized white star that burns too bright for its size, casting hard blue-white light and a soft red halo on everything near it.", "img": "plates/star_jar.jpg", "source": "drawn, Muse"}, {"id": "held_breath", "role": "motif", "description": "The gesture of pressing one open palm flat against the sternum and holding it there, chest motionless, as if keeping a sound inside.", "img": "plates/held_breath.jpg", "source": "drawn, Muse"}, {"id": "floating_debris", "role": "motif", "description": "Ordinary objects — a teacup, a photograph, a house key, flakes of wallpaper — hanging motionless in mid-air and turning very slowly.", "img": "plates/floating_debris.jpg", "source": "drawn, Muse"}], "shots": [{"id": 0, "s": 0.0, "e": 6.357, "bars": 4, "section": 0, "energy": 0.242, "path": "procedural", "scene": "weight", "note": "Wide, near-black bedroom standing in two inches of perfectly still water; the bed floats a hand's breadth above the floor and doubles in the mirror surface, wallpaper flakes hanging motionless in the air. No figure yet, only a faint blue bruise of light behind the bedframe.", "lyric": "", "place": "BEDROOM", "img": "panels/000.jpg", "arrow": "swirl", "move": "WEIGHT", "credits": 0, "buy": null}, {"id": 1, "s": 6.357, "e": 14.208, "bars": 4, "section": 0, "energy": 0.242, "path": "still", "scene": "", "note": "Low angle skimming the water surface: the keeper's bare arm hangs off the floating bed, fingertips a centimetre above their own reflection, wet dark hair spilling over the pillow edge. Everything pearl and ink, no motion but a single drifting flake.", "lyric": "", "place": "BEDROOM", "img": "panels/001.jpg", "arrow": "right", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 2, "s": 14.208, "e": 22.059, "bars": 4, "section": 0, "energy": 0.242, "path": "procedural", "scene": "nebula", "note": "The tall bedroom window seen straight on, starless black pressing against the glass, the first gold diffraction spikes just surfacing in the dark. Peeled wallpaper curls drift past in silhouette, turning very slowly.", "lyric": "", "place": "BEDROOM", "img": "panels/002.jpg", "arrow": "swirl", "move": "NEBULA", "credits": 0, "buy": null}, {"id": 3, "s": 22.059, "e": 30.005, "bars": 4, "section": 0, "energy": 0.242, "path": "still", "scene": "", "note": "Close on the keeper's face on the pillow, eyes open and not blinking, jaw set. A cold blue-white edge light rakes her cheekbone from somewhere behind the bed, leaving the rest of her in lavender shadow.", "lyric": "", "place": "SET", "img": "panels/003.jpg", "arrow": "right", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 4, "s": 30.005, "e": 37.877, "bars": 4, "section": 0, "energy": 0.242, "path": "generator", "scene": "", "note": "The camera has drifted past the bedframe and found it: a clamp-lid glass jar standing in the flooded floor, a fist-sized star burning too bright inside, hard blue-white light climbing the wallpaper with a soft red halo behind it.", "lyric": "", "place": "BEDROOM", "img": "panels/004.jpg", "arrow": "push", "move": "PUSH IN", "credits": 40, "buy": 8}, {"id": 5, "s": 37.877, "e": 45.824, "bars": 4, "section": 0, "energy": 0.242, "path": "still", "scene": "", "note": "Wide from the doorway, the whole room now lit blue-white by the jar; the keeper lies motionless on the floating bed, her long shadow thrown across the still water, furniture hovering, red halo on every wall.", "lyric": "", "place": "BEDROOM", "img": "panels/005.jpg", "arrow": "right", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 6, "s": 45.824, "e": 53.696, "bars": 4, "section": 1, "energy": 0.288, "path": "generator", "scene": "", "note": "She has sat up on the edge of the floating bed and lifted the jar clear of the water with both hands; her wrists bend back under a weight that does not match its size, cardigan sliding off one shoulder.", "lyric": "", "place": "SET", "img": "panels/006.jpg", "arrow": "push", "move": "LIFT", "credits": 40, "buy": 8}, {"id": 7, "s": 53.696, "e": 61.589, "bars": 4, "section": 1, "energy": 0.288, "path": "still", "scene": "", "note": "Three-quarter view: the keeper is down on her knees in the shallow water, the jar pressed into her thighs, shoulders hunched around it, a wide coral-red halo thrown up across the ceiling above her.", "lyric": "", "place": "NEBULA", "img": "panels/007.jpg", "arrow": "right", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 8, "s": 61.589, "e": 69.483, "bars": 4, "section": 2, "energy": 0.281, "path": "still", "scene": "", "note": "Hallway, waist-up and centred: she stands still in ankle-deep water, one open palm flat against her sternum, the jar hanging from her other hand at her hip. A teacup, a house key and a photograph hang motionless around her head.", "lyric": "", "place": "BEDROOM", "img": "panels/008.jpg", "arrow": "left", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 9, "s": 69.483, "e": 73.44, "bars": 2, "section": 3, "energy": 0.499, "path": "still", "scene": "", "note": "Low angle from the foot of the narrow stairwell: the keeper climbs away from camera, water sheeting off every tread, banisters wrapped in haze, each step glowing faintly from underneath.", "lyric": "", "place": "STAIRWELL", "img": "panels/009.jpg", "arrow": "right", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 10, "s": 73.44, "e": 77.387, "bars": 2, "section": 3, "energy": 0.499, "path": "still", "scene": "", "note": "Over her shoulder up the flight: the jar's blue-white glare burns out the near banister while the top of the stairs dissolves into open night sky studded with gold diffraction-spiked stars.", "lyric": "", "place": "STAIRWELL", "img": "panels/010.jpg", "arrow": "left", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 11, "s": 77.387, "e": 85.28, "bars": 3, "section": 4, "energy": 0.422, "path": "still", "scene": "", "note": "The stairwell walls have receded to nothing; she is a tiny hunched figure climbing a staircase a kilometre wide, treads vanishing left and right, everything washed in coral-red halo light against black.", "lyric": "", "place": "STAIRWELL", "img": "panels/011.jpg", "arrow": "right", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 12, "s": 85.28, "e": 93.184, "bars": 3, "section": 5, "energy": 0.402, "path": "still", "scene": "", "note": "Long landing in profile: doors stand open along it onto rain, onto falling snow, onto a bright pale fog field, each throwing its own weather-light across the boards. She walks past them without turning her head, a teacup hanging in the air behind her.", "lyric": "", "place": "FOG FIELD", "img": "panels/012.jpg", "arrow": "left", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 13, "s": 93.184, "e": 101.109, "bars": 3, "section": 6, "energy": 0.409, "path": "still", "scene": "", "note": "At the last door she crouches and sets the jar down on bare floorboards; the red halo spreads outward across the wallpaper like a tide reaching, her hands still cupped around the glass.", "lyric": "", "place": "BEDROOM", "img": "panels/013.jpg", "arrow": "right", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 14, "s": 101.109, "e": 105.067, "bars": 2, "section": 7, "energy": 0.482, "path": "still", "scene": "", "note": "Low wide looking up: the ceiling peels back in long sheets of wallpaper that curl away into the dark, the keeper small below them, jar at her feet throwing a hard blue-white cone upward.", "lyric": "", "place": "NEBULA", "img": "panels/014.jpg", "arrow": "left", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 15, "s": 105.067, "e": 109.024, "bars": 2, "section": 7, "energy": 0.482, "path": "still", "scene": "", "note": "Macro on one torn wallpaper sheet mid-air, its pale gold pattern fraying into streaked dust lanes at the edges, gold grain and diffraction stars showing through the gap behind it.", "lyric": "", "place": "NEBULA", "img": "panels/015.jpg", "arrow": "right", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 16, "s": 109.024, "e": 112.981, "bars": 2, "section": 7, "energy": 0.482, "path": "procedural", "scene": "nebula", "note": "Where the ceiling was, a blue-white inner shell of streaked filaments opens overhead, coral-red thickening at its rim, black studded with golden spiked stars beyond.", "lyric": "", "place": "NEBULA", "img": "panels/016.jpg", "arrow": "swirl", "move": "NEBULA", "credits": 0, "buy": null}, {"id": 17, "s": 112.981, "e": 116.939, "bars": 2, "section": 7, "energy": 0.482, "path": "still", "scene": "", "note": "Close on the keeper's face from the side as a teacup, a house key and a photograph rise slowly past her cheek, her wet hair lifting with them, blue-white light from below.", "lyric": "", "place": "NEBULA", "img": "panels/017.jpg", "arrow": "right", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 18, "s": 116.939, "e": 120.896, "bars": 2, "section": 7, "energy": 0.482, "path": "still", "scene": "", "note": "Wide: the walls of the landing have gone thin as smoke, the door frames still standing free in open space, water from the floor hanging in a flat lit sheet around her ankles.", "lyric": "", "place": "BEDROOM", "img": "panels/018.jpg", "arrow": "left", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 19, "s": 120.896, "e": 124.864, "bars": 2, "section": 7, "energy": 0.482, "path": "procedural", "scene": "nebula", "note": "Full-frame drift through coral-red outer halo, filaments streaming past like torn curtains, a far white core glinting at the centre of the smoke.", "lyric": "", "place": "NEBULA", "img": "panels/019.jpg", "arrow": "swirl", "move": "NEBULA", "credits": 0, "buy": null}, {"id": 20, "s": 124.864, "e": 128.832, "bars": 2, "section": 7, "energy": 0.482, "path": "still", "scene": "", "note": "Chest-level close: her open palm finally lifts away from her sternum, fingers spreading, the knitted cardigan sleeve falling back from a blue-white bleached wrist.", "lyric": "", "place": "SET", "img": "panels/020.jpg", "arrow": "left", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 21, "s": 128.832, "e": 132.768, "bars": 2, "section": 7, "energy": 0.482, "path": "still", "scene": "", "note": "Low close on her upturned face, eyes open, lips parted, the whole nebula reflected in them; pearl and lavender on her skin, a coral edge along her jaw.", "lyric": "", "place": "NEBULA", "img": "panels/021.jpg", "arrow": "right", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 22, "s": 132.768, "e": 136.736, "bars": 2, "section": 7, "energy": 0.482, "path": "procedural", "scene": "flight", "note": "Looking straight down past her bare feet: the floorboards have become lanes of drifting dust over bottomless black, the last water droplets rising instead of falling.", "lyric": "", "place": "SET", "img": "panels/022.jpg", "arrow": "swirl", "move": "FLIGHT", "credits": 0, "buy": null}, {"id": 23, "s": 136.736, "e": 140.693, "bars": 2, "section": 7, "energy": 0.482, "path": "still", "scene": "", "note": "Wide from behind: the house is only an outline of door frames and banisters now, dissolving into dust lanes, the keeper standing in the middle of it with the jar burning at her feet.", "lyric": "", "place": "NEBULA", "img": "panels/023.jpg", "arrow": "right", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 24, "s": 140.693, "e": 144.661, "bars": 2, "section": 7, "energy": 0.482, "path": "still", "scene": "", "note": "Extreme wide, tiny silhouette: she stands on nothing at all, surrounded on every side by the blue-white shell and coral halo, a bed and a chair still hanging far off in the dark.", "lyric": "", "place": "NEBULA", "img": "panels/024.jpg", "arrow": "left", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 25, "s": 144.661, "e": 148.629, "bars": 2, "section": 7, "energy": 0.482, "path": "procedural", "scene": "nebula", "note": "The blinding white core seen through a veil of dust, spiked rays just beginning to lengthen, the field around it studded with golden diffraction stars.", "lyric": "", "place": "NEBULA", "img": "panels/025.jpg", "arrow": "swirl", "move": "NEBULA", "credits": 0, "buy": null}, {"id": 26, "s": 148.629, "e": 152.587, "bars": 2, "section": 7, "energy": 0.482, "path": "still", "scene": "", "note": "Three-quarter medium: she bends and lifts the jar from the dust at her feet, raising it to chest height, head tilted back toward the opened sky, hair floating around her face.", "lyric": "", "place": "NEBULA", "img": "panels/026.jpg", "arrow": "left", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 27, "s": 152.587, "e": 156.544, "bars": 2, "section": 7, "energy": 0.482, "path": "still", "scene": "", "note": "Close on the jar held in both bleached blue-white hands, the star inside straining against the clamp lid, a huge soft red halo filling the frame behind her knuckles.", "lyric": "", "place": "SET", "img": "panels/027.jpg", "arrow": "right", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 28, "s": 156.544, "e": 160.512, "bars": 2, "section": 8, "energy": 0.526, "path": "still", "scene": "", "note": "Tight on her thumbs flicking the clamp lid open, the seal lifting, a hairline of white light knifing out between glass and lid across her face.", "lyric": "", "place": "SET", "img": "panels/028.jpg", "arrow": "left", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 29, "s": 160.512, "e": 166.475, "bars": 2, "section": 8, "energy": 0.526, "path": "generator", "scene": "", "note": "The star leaves her hands and blooms into a blinding spiked core with a blue-white filament shell and coral halo; her shoulders drop back and straighten, arms still open, empty jar falling slowly.", "lyric": "", "place": "NEBULA", "img": "panels/029.jpg", "arrow": "tilt", "move": "TILT UP", "credits": 30, "buy": 6}, {"id": 30, "s": 166.475, "e": 174.432, "bars": 4, "section": 9, "energy": 0.292, "path": "still", "scene": "", "note": "Flat pale field of low night fog, a single kitchen chair standing in it with the keeper seated small, barefoot, hands loose in her lap, the empty jar on its side beside her in the grass.", "lyric": "", "place": "FOG FIELD", "img": "panels/030.jpg", "arrow": "left", "move": "DRIFT", "credits": 0, "buy": null}, {"id": 31, "s": 174.432, "e": 182.214, "bars": 4, "section": 9, "energy": 0.292, "path": "generator", "scene": "", "note": "Extreme wide pulling back: her tiny lit figure and the chair hold the bottom of the frame while the vast luminous cloud occupies the whole sky, fading outward into black studded with gold diffraction stars.", "lyric": "", "place": "FOG FIELD", "img": "panels/031.jpg", "arrow": "pull", "move": "PULL BACK", "credits": 40, "buy": 8}], "concept_tokens": 6032, "notes_tokens": 10302, "panel_credits": 32, "render_credits": 150}</script>
+<script>
+(() => {
+  const D = JSON.parse(document.getElementById('data').textContent);
+  const $ = (s) => document.querySelector(s);
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const mmss = (t) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // hero + concept
+  $('#logline').textContent = D.logline;
+  $('#quote').textContent = `“${D.logline}”`;
+  $('#world').textContent = D.world;
+  $('#palette').textContent = D.palette;
+  for (const [k, v] of [['Style', D.style], ['Tempo', `${D.bpm} BPM`], ['Length', mmss(D.duration)], ['Shots', D.shots.length], ['Mood', D.mood.join(', ')]]) {
+    const f = el('span', 'fact'); f.append(`${k} `); f.append(el('b', null, v)); $('#facts').append(f);
+  }
+  for (const s of D.sections) {
+    const seg = el('span'); seg.style.flex = String(s.e - s.s);
+    const en = D.shots.filter(x => x.section === s.n).reduce((a, x) => a + x.energy, 0) / s.shots;
+    seg.style.setProperty('--en', en.toFixed(2)); $('#timeline').append(seg);
+    const li = el('li'); li.append(el('time', null, mmss(s.s))); li.append(el('span', null, s.purpose)); $('#arc').append(li);
+  }
+  for (const r of D.refs) {
+    const card = el('article', 'ref' + (r.img ? '' : ' motif'));
+    if (r.img) { const im = el('img'); im.src = r.img; im.alt = r.description; im.loading = 'lazy'; card.append(im); }
+    else card.append(el('div', 'ph', r.id.replace(/_/g, ' ')));
+    const t = el('div', 'txt'); t.append(el('span', 'role', `${r.role} · ${r.source}`)); t.append(el('h3', null, r.id.replace(/_/g, ' '))); t.append(el('p', null, r.description));
+    card.append(t); $('#refs').append(card);
+  }
+
+  // storyboard sheet: header strip, panel, grease-pencil arrow, typed slip
+  const NS = 'http://www.w3.org/2000/svg';
+  const ARROWS = {
+    right: { d: ['M22 66 C 55 60, 92 62, 136 54', 'M124 45 L137 54 L125 64'], label: [96, 78] },
+    left:  { d: ['M138 66 C 105 60, 68 62, 24 54', 'M36 45 L23 54 L35 64'], label: [36, 78] },
+    push:  { d: ['M14 10 L44 28', 'M34 28 L45 28 L42 18', 'M146 10 L116 28', 'M126 28 L115 28 L118 18', 'M14 80 L44 62', 'M146 80 L116 62'], label: [62, 50] },
+    pull:  { d: ['M62 34 L22 12', 'M24 22 L21 11 L32 12', 'M98 34 L138 12', 'M128 12 L139 11 L136 22', 'M62 58 L22 80', 'M98 58 L138 80'], label: [58, 50] },
+    tilt:  { d: ['M146 84 C 141 62, 143 36, 146 10', 'M139 20 L146 9 L152 20'], label: [100, 84] },
+    swirl: { d: ['M62 68 C 30 64, 30 26, 70 20 C 108 14, 132 36, 118 60', 'M112 48 L118 61 L131 54'], label: [62, 84] },
+  };
+  function arrow(kind, label) {
+    const svg = document.createElementNS(NS, 'svg'); svg.setAttribute('viewBox', '0 0 160 90'); svg.setAttribute('aria-hidden', 'true');
+    const a = ARROWS[kind];
+    for (const [cls, w, dx] of [['under', 4.2, .6], ['stroke', 2.2, 0], ['stroke', 1, .9]]) {
+      for (const d of a.d) {
+        const p = document.createElementNS(NS, 'path'); p.setAttribute('d', d); p.setAttribute('class', cls);
+        p.setAttribute('pathLength', '1'); p.setAttribute('stroke-width', w); if (dx) p.setAttribute('transform', `translate(${dx} ${dx * .6})`);
+        svg.append(p);
+      }
+    }
+    const t = document.createElementNS(NS, 'text'); t.setAttribute('x', a.label[0]); t.setAttribute('y', a.label[1]); t.textContent = label; svg.append(t);
+    return svg;
+  }
+  const slipText = (s) => {
+    const kind = s.path === 'procedural' ? 'PROC.' : 'LOC.';
+    const where = s.path === 'procedural' ? `${s.scene.toUpperCase()} scene` : s.place;
+    const tail = s.path === 'generator' ? ` [RUNWAY ${s.buy} s, ${s.credits} cr]` : '';
+    return `Sc. ${String(s.id).padStart(2, '0')} ${kind} ${where} - ${s.note}${tail}`;
+  };
+  const cards = [];
+  D.shots.forEach((s, i) => {
+    const c = el('article', 'card'); c.dataset.path = s.path;
+    const top = el('div', 'card-top');
+    top.append(el('span', null, `SHOT ${String(s.id).padStart(2, '0')}`), el('span', null, `SECTION ${s.section} · ${s.bars} BARS · ${(s.e - s.s).toFixed(2)} s`), el('span', null, mmss(s.s)));
+    const f = el('div', 'frame');
+    const im = el('img'); im.src = s.img; im.alt = s.note; im.loading = 'lazy'; f.append(im);
+    f.append(arrow(s.arrow, s.move));
+    f.append(el('span', 'tag ' + s.path, s.path === 'generator' ? 'Runway' : s.path === 'procedural' ? 'Scene' : 'Still'));
+    const slip = el('p', 'slip', slipText(s)); slip.style.setProperty('--tilt', `${((i * 37) % 9 - 4) / 10}deg`);
+    c.append(top, f, slip);
+    if (s.lyric) c.append(el('p', 'lyric', `“${s.lyric}”`));
+    $('#cards').append(c); cards.push([c, slip, slipText(s)]);
+  });
+
+  // typewriter + arrow draw, replayed for cards scrolled into view after load
+  function type(slip, text) {
+    let n = 0; const step = Math.max(1, Math.ceil(text.length / 60));
+    slip.textContent = ''; const caret = el('span', 'caret'); const node = document.createTextNode(''); slip.append(node, caret);
+    const tick = () => { n = Math.min(text.length, n + step); node.data = text.slice(0, n); if (n < text.length) setTimeout(tick, 22); else caret.remove(); };
+    tick();
+  }
+  if (!reduce && 'IntersectionObserver' in window) {
+    const seen = new WeakSet(); let ready = false;
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting || seen.has(e.target)) continue;
+        seen.add(e.target);
+        if (!ready) continue;                       // already on screen at load: leave it at rest
+        const [c, slip, text] = cards.find(x => x[0] === e.target);
+        c.classList.add('drawing'); type(slip, text);
+      }
+    }, { threshold: .35 });
+    cards.forEach(([c]) => io.observe(c));
+    setTimeout(() => { ready = true; }, 400);
+  }
+  document.querySelectorAll('.filters button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.filters button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    cards.forEach(([c]) => { c.hidden = b.dataset.f !== 'all' && c.dataset.path !== b.dataset.f; });
+  }));
+
+  // slice 3 clips
+  for (const s of D.shots.filter(x => x.path === 'generator')) {
+    const c = el('figure', 'clip'); c.style.margin = '0';
+    const v = el('video'); Object.assign(v, { src: `clips/${String(s.id).padStart(3, '0')}.mp4`, muted: true, loop: true, playsInline: true, preload: 'none', poster: s.img });
+    v.dataset.auto = ''; c.append(v);
+    const m = el('div', 'meta'); m.append(el('b', null, `Shot ${s.id} · ${s.move.toLowerCase()}`), el('span', null, `${s.buy} s · ${s.credits} cr`)); c.append(m);
+    c.append(el('p', null, s.note)); $('#clips').append(c);
+  }
+  const vio = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach(e => {
+    if (e.isIntersecting && !reduce) e.target.play().catch(() => {}); else e.target.pause();
+  }), { threshold: .4 }) : null;
+  document.querySelectorAll('video[data-auto]').forEach(v => { v.muted = true; vio && vio.observe(v); });
+
+  // live rough cut: the board page's player, panels on the beat under the song
+  const cv = $('#rough'), g = cv.getContext('2d'), W = cv.width, H = cv.height, audio = $('#song');
+  const imgs = D.shots.map(s => { const im = new Image(); im.src = s.img; return im; });
+  const down = new Set(D.downbeats.map(b => b.toFixed(2)));
+  const shotAt = (t) => { let i = D.shots.findIndex(s => t < s.e); return i < 0 ? D.shots.length - 1 : i; };
+  const lastBeat = (t) => { let lo = 0, hi = D.beats.length - 1, r = null; while (lo <= hi) { const m = (lo + hi) >> 1; if (D.beats[m] <= t) { r = D.beats[m]; lo = m + 1; } else hi = m - 1; } return r; };
+  function paint() {
+    const t = audio.currentTime || +$('#rscrub').value, i = shotAt(t), s = D.shots[i];
+    const p = Math.min(1, Math.max(0, (t - s.s) / (s.e - s.s)));
+    const b = lastBeat(t), since = b === null ? 9 : t - b, strong = b !== null && down.has(b.toFixed(2));
+    const kick = Math.exp(-since * 9) * (strong ? 1 : .45) * (.5 + s.energy);
+    g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+    const im = imgs[i];
+    if (im.complete && im.naturalWidth) {
+      const z = 1.06 + .08 * p + .025 * kick, dir = i % 2 ? 1 : -1;
+      const cover = Math.max(W / im.naturalWidth, H / im.naturalHeight) * z;
+      const w = im.naturalWidth * cover, h = im.naturalHeight * cover;
+      g.drawImage(im, (W - w) / 2 + dir * (p - .5) * W * .05, (H - h) / 2, w, h);
+    }
+    if (kick > .01) { g.fillStyle = `rgba(255,248,235,${.16 * kick})`; g.fillRect(0, 0, W, H); }
+    const label = `SHOT ${s.id} · ${s.bars} BARS` + (s.path === 'generator' ? ` · RUNWAY ${s.credits} CR` : s.path === 'procedural' ? ` · SCENE: ${s.scene.toUpperCase()}` : '');
+    g.font = '24px "Special Elite", "Courier New", monospace'; const lw = g.measureText(label).width;
+    g.fillStyle = 'rgba(243,238,226,.92)'; g.fillRect(28, H - 70, lw + 28, 44);
+    g.fillStyle = '#2b2622'; g.fillText(label, 42, H - 40);
+    $('#rclock').textContent = `${mmss(t)} / ${mmss(D.duration)}`;
+    if (!audio.paused) $('#rscrub').value = t;
+  }
+  function loop() { paint(); if (!audio.paused) requestAnimationFrame(loop); }
+  $('#rplay').addEventListener('click', async () => {
+    if (audio.paused) { try { await audio.play(); } catch { } } else audio.pause();
+  });
+  audio.addEventListener('play', () => { $('#rplay').textContent = '❚❚'; $('#rplay').setAttribute('aria-label', 'Pause the rough cut'); loop(); });
+  audio.addEventListener('pause', () => { $('#rplay').textContent = '▶'; $('#rplay').setAttribute('aria-label', 'Play the rough cut'); });
+  $('#rscrub').max = D.duration;
+  $('#rscrub').addEventListener('input', (e) => { audio.currentTime = +e.target.value; paint(); });
+  // the main video and the rough cut never play over each other
+  $('#cut').addEventListener('play', () => audio.pause());
+  audio.addEventListener('play', () => $('#cut').pause());
+  imgs[0].onload = paint; document.fonts && document.fonts.ready.then(paint); paint();
+})();
+</script>
+
+</body>
+</html>
