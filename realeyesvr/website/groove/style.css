@@ -41,4 +41,5 @@ dialog:has(.story-studio){width:min(980px,94vw);max-height:92vh;overflow:auto}
 /* Featured video: The Weight of Silence studio log. Shown on phones too. */
 .showcase .feature-art{background:url('weight-of-silence/panels/029.jpg') center 30%/cover}
 .showcase .play-preview{display:grid;place-items:center;color:#fff;text-decoration:none}
+.showcase .new-link{color:#ffcf8a;text-decoration:underline;text-underline-offset:2px}
 @media(max-width:700px){.feature.showcase{display:block;margin-bottom:15px}}
